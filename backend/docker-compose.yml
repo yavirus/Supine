@@ -1,0 +1,39 @@
+version: '3.8'
+
+sevices:
+  web:
+    build: ./web
+    image: supine-web:0.0.1
+    depends_on:
+      - postgres
+    networks:
+      - supine
+      - default
+    volumes:
+      - ./web/code:/app
+    ports:
+      - "8080:80"
+
+  dj:
+    build: ./dj
+    image: supine-dj:0.1.0
+    depends_on:
+      - postgres
+    networks:
+      - default
+    volumes:
+      - ./dj/code:/app
+
+  postgres:
+    image: postgres
+    eviroment:
+      - POSTGRES_PASSWORD=password
+    networks:
+      - default
+
+networks:
+  supine:
+    external:
+      name: supine
+  default:
+    driver: bridge
