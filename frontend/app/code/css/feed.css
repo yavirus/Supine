@@ -1,0 +1,29 @@
+#feedHeader{
+	border-bottom: 1px solid #CCCCCC!important;
+	background-color: #FF7514;
+	height: 6%
+
+
+}
+#navIcon img {
+	margin: 8px;
+}
+li#navIcon:hover {
+	
+	background-color: #EC7C26;
+}
+.navbar-brand{
+	color: #FFFFFF;
+	font-size: 200%!important;
+	font-family: 'Baloo 2', cursive;
+}
+.navbar-brand:hover{
+	color: #FFFFFF;
+}
+#feed{
+	
+	width: 40%;
+	margin-top: 4%;
+
+    
+}
