@@ -1,6 +1,6 @@
-version: '3.8'
+version: '3.7'
 
-sevices:
+services:
   web:
     build: ./web
     image: supine-web:0.0.1
@@ -26,7 +26,7 @@ sevices:
 
   postgres:
     image: postgres
-    eviroment:
+    environment:
       - POSTGRES_PASSWORD=password
     networks:
       - default
