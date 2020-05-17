@@ -18,4 +18,4 @@ def config_db_as_admin(c):
     cursor.close()
     conn.close()
 
-
+print('lsdjflks')
