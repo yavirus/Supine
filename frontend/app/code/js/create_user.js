@@ -1,4 +1,4 @@
-function sendUserData() {
+async function sendUserData() {
 	let data = getElementById("sign-up-form");
 
 	let username = data.uname.value;

@@ -27,7 +27,7 @@ def create_tables(c):
     cursor.execute('''CREATE TABLE users (
                         id SERIAL,
                         username TEXT,
-                        hobbys TABLE, 
+                        hobbys VARCHAR, 
                         password TEXT
                         );''')
     cursor.close()

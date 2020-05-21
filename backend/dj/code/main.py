@@ -1,5 +1,5 @@
 from settings import config
-from tools import config_db_as_admin
+from tools import config_db_as_admin, create_tables
 from mingrations import shippers_migration
 
 if __name__ == '__main__':
