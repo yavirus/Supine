@@ -16,13 +16,16 @@ class PostgresWorker:
 
     def save_user(self, contents):
         records = []
-        username = contents['username']
-        hobbys = contents['hobbys']
-        password = contents['password']
-        request = '''INSERT INTO users (username, hobbys, password)
+        con_values = []
+        for dict in contents:
+            con_values.append(dict['value'])
+        username = con_values[0]
+        password = con_values[1]
+
+        request = '''INSERT INTO users (username, password)
                     VALUES(%s, %s)
                     RETURNING id;'''
-        self.cursor.execute(request, (username, hobbys, password))
+        self.cursor.execute(request, (username, password))
         for record in self.cursor:
             records.append({'id': record['id']})
             self.conn.commit()

@@ -6,8 +6,7 @@ import json
 
 async def save_user(request):
     request_data = await request.json()
-    parsed_data = json.loads(request_data)
-    save_result = request.app['db'].save_user(parsed_data)
+    save_result = request.app['db'].save_user(request_data)
     response = json.dumps(save_result)
     return web.json_response(response)
 
