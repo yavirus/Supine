@@ -14,6 +14,23 @@ class PostgresWorker:
     def close_connection(self):
         return self.disconnect()
 
+    def save_user(self, contents):
+        records = []
+        con_values = []
+        for dict in contents:
+            con_values.append(dict['value'])
+        username = con_values[0]
+        password = con_values[1]
+
+        request = '''INSERT INTO users (username, password)
+                    VALUES(%s, %s)
+                    RETURNING id;'''
+        self.cursor.execute(request, (username, password))
+        for record in self.cursor:
+            records.append({'id': record['id']})
+            self.conn.commit()
+            return records
+
     def _validate_config(self, conf):
         required_fields = ['database', 'user', 'password', 'host', 'port']
         for field in required_fields:

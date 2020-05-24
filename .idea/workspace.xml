@@ -6,30 +6,39 @@
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
     </expand>
     <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:develop" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="810e0a30-9295-4e4d-9084-21fadb0be6f7" name="Default Changelist" comment="" />
+    <list default="true" id="810e0a30-9295-4e4d-9084-21fadb0be6f7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_05_2020,_19_58_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_05_2020__19_58__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/web/code/pdb/worker.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/code/pdb/worker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/web/code/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/code/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/code/create_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/code/create_user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/code/js/create_user.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/code/js/save_user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/conf/conf_d/supine.conf" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/conf/conf_d/supine.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/docker-compose.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <excluded-from-favorite>
@@ -58,23 +67,76 @@
         </map>
       </branch-storage>
     </favorite-branches>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="develop" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1byVSA9BwHrI9MeT2Og7VcalJuF" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../bearings" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Confirmation" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
+    <task id="LOCAL-00001" summary="test2">
+      <created>1589624993946</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1589624993946</updated>
+    </task>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="810e0a30-9295-4e4d-9084-21fadb0be6f7" name="Default Changelist" comment="test2" />
+      <created>1589716408274</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1589716408274</updated>
+    </task>
+    <task id="LOCAL-00002" summary="test3">
+      <created>1589718945855</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1589718945855</updated>
+    </task>
+    <task id="LOCAL-00003" summary="test4">
+      <created>1589718987023</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1589718987023</updated>
+    </task>
+    <task id="LOCAL-00004" summary="developing sign up algorithm 1">
+      <created>1590047771148</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1590047771148</updated>
+    </task>
+    <task id="LOCAL-00005" summary="developing sign up algorithm 2">
+      <created>1590067386634</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1590067386634</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -82,17 +144,95 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="TEXT_FILTER_SETTINGS">
+                <TextFilterSettings>
+                  <option name="MATCH_CASE" value="true" />
+                </TextFilterSettings>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="develop" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="HEAD" />
+                </option>
+              </RecentGroup>
+            </list>
           </value>
         </entry>
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="test2" />
+    <MESSAGE value="test3" />
+    <MESSAGE value="test4" />
+    <MESSAGE value="developing sign up algorithm 1" />
+    <MESSAGE value="developing sign up algorithm 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="developing sign up algorithm 2" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="313" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1589604419412">
+    <state x="124" y="193" width="536" height="491" key="#Notifications" timestamp="1589624748276">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="313" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1589604419412" />
+    <state x="124" y="193" width="536" height="491" key="#Notifications/67.27.1853.1053@67.27.1853.1053" timestamp="1589624748276" />
+    <state x="245" y="354" width="560" height="396" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1589624079604">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="245" y="354" width="560" height="396" key="#com.intellij.fileTypes.FileTypeChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1589624079604" />
+    <state x="69" y="100" width="912" height="904" key="CommitChangelistDialog2" timestamp="1590067386477">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="69" y="100" width="912" height="904" key="CommitChangelistDialog2/67.27.1853.1053@67.27.1853.1053" timestamp="1590067386477" />
+    <state x="313" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1590129523148">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="313" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1590129523148" />
+    <state x="67" y="187" key="SettingsEditor" timestamp="1589624601787">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="67" y="187" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1589624601787" />
+    <state x="167" y="125" width="726" height="855" key="ShowDiffWithBranchDialog" timestamp="1589624141651">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="167" y="125" width="726" height="855" key="ShowDiffWithBranchDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1589624141651" />
+    <state x="250" y="247" width="539" height="612" key="git4idea.branch.GitSmartOperationDialog" timestamp="1589716503806">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="250" y="247" width="539" height="612" key="git4idea.branch.GitSmartOperationDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1589716503806" />
+    <state x="184" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1590313340564">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="184" y="259" width="672" height="678" key="search.everywhere.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1590313340564" />
   </component>
 </project>

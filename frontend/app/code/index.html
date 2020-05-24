@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Supine</title>
-    <link rel="stylesheet" type="text/css" href="css/feed.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
 
 </head>
 <body>
-
 <nav class="navbar navbar-expand fixed-top navbar-right " id="feedHeader">
 
     <a class="navbar-brand" href="#">Supine</a>
@@ -37,6 +36,7 @@
         </ul>
     </div>
 </nav>
+
 <div class="container col-md-8" id="feed">
 	{% for p_card in p_cards %}
 <div>	
@@ -46,7 +46,9 @@
 	{% endfor %}
 </div>
 
-
+<div class="container col-sm-4" id="link">
+<button type="button" class="btn btn-link"><a href="create_user.html">Sign up</a></button>
+</div>
 
     <script src="js/feed.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

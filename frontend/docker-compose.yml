@@ -8,9 +8,10 @@ services:
       - '80:80'
     volumes:
       - ./app/code:/www/data
-
+    networks:
+      - supine
 
 networks:
-  default:
+  supine:
     external:
       name: supine

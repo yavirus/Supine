@@ -18,6 +18,17 @@ def config_db_as_admin(c):
     cursor.close()
     conn.close()
 
-
-
-
+def create_tables(c):
+    conn = connect(dbname=c['database'],
+                   user=c['user'], password=c['password'],
+                   host=c['host'], port=c['port'])
+    conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
+    cursor = conn.cursor()
+    cursor.execute('''CREATE TABLE users (
+                        id SERIAL,
+                        username TEXT,
+                        hobbys VARCHAR, 
+                        password TEXT
+                        );''')
+    cursor.close()
+    conn.close()
