@@ -25,10 +25,11 @@ def create_tables(c):
     conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
     cursor = conn.cursor()
     cursor.execute('''CREATE TABLE users (
-                        id SERIAL,
-                        username TEXT,
+                        id SERIAL PRIMARY KEY,
+                        username VARCHAR UNIQUE,
                         hobbys VARCHAR, 
-                        password TEXT
+                        password VARCHAR,
+                        email VARCHAR
                         );''')
     cursor.close()
     conn.close()

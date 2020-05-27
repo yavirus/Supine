@@ -25,11 +25,15 @@ class PostgresWorker:
         request = '''INSERT INTO users (username, password)
                     VALUES(%s, %s)
                     RETURNING id;'''
-        self.cursor.execute(request, (username, password))
-        for record in self.cursor:
-            records.append({'id': record['id']})
-            self.conn.commit()
-            return records
+        try:
+            self.cursor.execute(request, (username, password))
+            for record in self.cursor:
+                records.append({'id': record['id']})
+                self.conn.commit()
+                return records
+        except Exception:
+            return False
+
 
     def _validate_config(self, conf):
         required_fields = ['database', 'user', 'password', 'host', 'port']
