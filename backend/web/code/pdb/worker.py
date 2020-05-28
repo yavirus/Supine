@@ -25,12 +25,13 @@ class PostgresWorker:
         request = '''INSERT INTO users (username, password)
                     VALUES(%s, %s)
                     RETURNING id;'''
+
         try:
             self.cursor.execute(request, (username, password))
             for record in self.cursor:
                 records.append({'id': record['id']})
                 self.conn.commit()
-                return records
+                return True
         except Exception:
             return False
 

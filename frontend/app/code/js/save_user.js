@@ -18,7 +18,8 @@ async function sendUserData() {
 		});
 
 		let result = await response.json();
-		console.log(result.message);
+
+		console.log(result);
 
 }
 
