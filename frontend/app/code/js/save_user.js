@@ -21,8 +21,34 @@ async function sendUserData() {
 
 		console.log(result);
 
+		if(result == "false"){
+			notUniqueuname();
+		}
 }
+function notUniqueuname(){
+		let unameForm = document.getElementById("uname-form");
+		let error = document.getElementById('uname-error');
 
+
+		if(error){
+			unameForm.removeChild(error);
+		}
+
+		data.new_uname.classList.add('is-invalid');
+		errorMesDiv = document.createElement("div");
+		errorMesDiv.classList.add("col-sm-4");
+		errorMesDiv.id = 'uname-error';
+
+		unameForm.appendChild(errorMesDiv);
+
+		errorMes = document.createElement("small");
+		errorMes.classList.add("text-danger");
+		errorMes.appendChild(document.createTextNode('This username is already taken'));
+		errorMesDiv.appendChild(errorMes);
+		fine2 = false;
+		disableButton();
+		return false;
+}
 
 function checkPassword(){
 		let rePassword = data.rePassword.value;

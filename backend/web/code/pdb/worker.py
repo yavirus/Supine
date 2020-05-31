@@ -20,21 +20,22 @@ class PostgresWorker:
         for dict in contents:
             con_values.append(dict['value'])
         username = con_values[0]
-        password = con_values[1]
+        email = con_values[1]
+        password = con_values[3]
 
-        request = '''INSERT INTO users (username, password)
-                    VALUES(%s, %s)
+        request = '''INSERT INTO users (username, password, email)
+                    VALUES(%s, %s, %s)
                     RETURNING id;'''
 
         try:
-            self.cursor.execute(request, (username, password))
+            self.cursor.connection.rollback()
+            self.cursor.execute(request, (username, password, email))
             for record in self.cursor:
                 records.append({'id': record['id']})
                 self.conn.commit()
                 return True
         except Exception:
             return False
-
 
     def _validate_config(self, conf):
         required_fields = ['database', 'user', 'password', 'host', 'port']
