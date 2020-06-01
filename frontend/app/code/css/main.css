@@ -1,8 +1,7 @@
 #feedHeader{
-	border-bottom: 1px solid #CCCCCC!important;
-	background-color: #FF7514;
+	border-bottom: 1px solid #CCCCCC;
+	background-color: #FFFFFF;
 	height: 5%
-
 
 }
 #navIcon img {
@@ -13,12 +12,12 @@ li#navIcon:hover {
 	background-color: #EC7C26;
 }
 .navbar-brand{
-	color: #FFFFFF;
+	color: #FF7514;
 	font-size: 200%!important;
 	font-family: 'Baloo 2', cursive;
 }
 .navbar-brand:hover{
-	color: #FFFFFF;
+	color: #FF7514;
 }
 #feed{
 	

@@ -1,0 +1,86 @@
+#main1{
+	width: 63vh;
+	margin-top: auto;
+	margin-top: 8%;
+}
+#prof-pic{
+	max-width: 29vh;
+	max-height: 29vh;
+	min-width: 29vh;
+	width: 29vh;
+	height: 29vh;
+	border-radius: 50%;
+	margin: auto;
+	
+}
+#test-pic{
+	max-width: 25vh;
+	max-height: 25vh;
+	border-radius: 50%;
+	width: 25vh;
+	height: 25vh;
+}
+#u-f-name{
+	max-width: 100%;
+	text-align: center;
+	padding: 3%;
+	width: 60%;
+	margin-left: -4%;
+	border-bottom: solid 1px;
+	border-color: #FF7514;
+	margin: auto;
+}
+#username{
+	font-size: 3vh;
+	color: #FF7514;
+}
+#full-name{
+	font-size: 3.5vh;
+	color:#FF7514;
+}
+#set-btn{
+	max-width: 25%;
+	margin-top: 5%;
+}
+
+#memes-table{
+	margin: auto;
+	margin-top: 2%;
+	width: 65vh;
+}
+#memes, #h-o, #plus{
+	text-align: center;
+	
+	background-color: #FFFFFF;
+	border-radius: 5%;
+	min-height: 4.7vh;
+	height: 4.7vh;
+	width: 20vh;
+	font-family: 'Baloo 2', cursive;
+	color: #FF7514;
+	border-color: #FF7514!important;
+	border: solid 1px;
+	font-size: 3vh;
+}
+#row{
+	max-width: 100%;
+	max-height: 100%;
+	flex-wrap: nowrap;
+}
+#memes-col{
+
+}
+
+#edit-uname:focus{
+	outline: none;
+}
+#sec-col{
+	max-width: 20vh;
+
+}
+#main-info{
+	max-width: 100%;
+}
+body{
+	overflow-y: scroll;
+}
