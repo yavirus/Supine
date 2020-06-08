@@ -1,0 +1,80 @@
+body{
+	display: block;
+}
+
+.form-horizontal{
+
+	width: 50%;
+}
+.container form{
+	margin-left: 28%;
+
+}
+.container{
+	margin-top: 7%;
+}
+.page-header{
+	margin-right: 8%
+}
+#sign-up-btn{
+	margin-left: 52.5%;
+	width: 30%;
+}
+#set-sel{
+	margin: auto;
+	margin-bottom: 7%;
+	
+}
+#set{
+	text-align: center;
+	background-color: #FFFFFF;
+	border-radius: 5%;
+	min-height: 4.7vh;
+	height: 4.7vh;
+	width: 20vh;
+	min-width: 20vh;
+	max-width: 20vh;
+	font-family: 'Baloo 2', cursive;
+	color: #FF7514;
+	border-color: #FF7514!important;
+	border: solid 1px;
+	font-size: 3vh;
+
+}
+#set-col{
+	justify-content: center;
+	
+	display: flex;
+	justify-content: center;
+}
+#row{
+	max-width: 100%;
+	max-height: 100%;
+	flex-wrap: nowrap;
+
+}
+#pressed{
+	text-align: center;
+	background-color: #FFFFFF;
+	border-radius: 5%;
+	min-height: 4.7vh;
+	height: 4.7vh;
+	width: 20vh;
+	font-family: 'Baloo 2', cursive;
+	color: #B5B8B1;
+	border: solid 1px;
+	font-size: 3vh;
+}
+label{
+	font-family: 'Baloo 2', cursive;
+	color: #FF7514;
+}
+#prof-form{
+	display: block;
+}
+#password-form{
+	display: none;
+}
+#privacy-set{
+	display: none;
+}

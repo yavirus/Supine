@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
 </head>
-<body onresize="reducePageSize()">
+<body>
 	<nav class="navbar navbar-expand fixed-top navbar-right " id="feedHeader">
 
     <a class="navbar-brand" href="#">Supine</a>
@@ -43,11 +43,11 @@
       </div>
       <div class="col-sm-6 col-lg-4 a2" id="main-info">
       	<div class="col-md-8" id="prof-pic">
-			<img src="test-pic.png" id="test-pic">
+			     <img id="test-pic" src="test-pic.png">
 		</div>
 		<div class="col-md-8" id="u-f-name">
-			<h1 id="username">yavirus</h1>
-			<h2 id="full-name">Rick Kin</h2>
+			<h1 id="username"></h1>
+			<h2 id="full-name"></h2>
 		</div>
       </div>
       <div class="clearfix visible-sm-block visible-md-block"></div>
@@ -57,22 +57,30 @@
 </div>
  <div class="col-xl-8 d-flex justify-content-center" id="memes-table">
     	<div class="row" id="row">
+        <div>
       		<div class="col-md-6 col-lg-4" id="sec-col">
-      			<div class="col"  id="memes">
+      				<button class="col" id="section" onclick=" openSection()" onmousedown="changeColor(this)">
       				memes
-      			</div>
+      			</button>
       		</div>
+          <div class="col-sm-8" id="subsec">
+
+          </div>
+        </div>
+        <div>
       		<div class="col-md-6 col-lg-4" id="sec-col">
-      			<div class="col"  id="memes">
+      			<button class="col"  id="section" onclick="openSection()" onmousedown="changeColor(this)">
       				h&o
-      			</div>
+      			</button>
       		</div>
-      		<div class="clearfix visible-sm-block visible-md-block"></div>
+        </div>
+        <div>
       		<div class="col-md-6 col-lg-4" id="sec-col">
-      			<div class="col"  id="memes">
+      			<button class="col"  id="section" onclick="addSection(this)" onmousedown="changeColor(this)">
       				+
-      			</div>
+      			</button>
       		</div>
+        </div>
 
     </div>
   </div>

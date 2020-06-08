@@ -1,6 +1,5 @@
 let data = document.getElementById("sign-up-form");
 
-
 fine1 = false;
 fine2 = false;
 fine3 = false;
@@ -23,6 +22,9 @@ async function sendUserData() {
 
 		if(result == "false"){
 			notUniqueuname();
+		}
+		else if(result == "true"){
+			window.location.replace('http://supine.local/profile_page.html');
 		}
 }
 function notUniqueuname(){

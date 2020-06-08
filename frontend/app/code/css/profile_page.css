@@ -31,10 +31,14 @@
 	margin: auto;
 }
 #username{
+	display: flex;
+	justify-content: center;
 	font-size: 3vh;
 	color: #FF7514;
 }
 #full-name{
+	display: flex;
+	justify-content: center;
 	font-size: 3.5vh;
 	color:#FF7514;
 }
@@ -48,7 +52,7 @@
 	margin-top: 2%;
 	width: 65vh;
 }
-#memes, #h-o, #plus{
+#section{
 	text-align: center;
 	
 	background-color: #FFFFFF;
@@ -71,9 +75,7 @@
 
 }
 
-#edit-uname:focus{
-	outline: none;
-}
+
 #sec-col{
 	max-width: 20vh;
 
@@ -81,6 +83,22 @@
 #main-info{
 	max-width: 100%;
 }
-body{
-	overflow-y: scroll;
+
+button:focus{
+	outline: none!important;
+}
+#pressed{
+	text-align: center;
+	background-color: #FFFFFF;
+	border-radius: 5%;
+	min-height: 4.7vh;
+	height: 4.7vh;
+	width: 20vh;
+	font-family: 'Baloo 2', cursive;
+	color: #B5B8B1;
+	border: solid 1px;
+	font-size: 3vh;
+}
+#sub-sec{
+	display: none;
 }

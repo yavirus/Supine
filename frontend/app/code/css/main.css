@@ -32,3 +32,6 @@ li#navIcon:hover {
 	width: 40%;
 	margin-top: 10%;
 }
+button:focus{
+	outline: none!important;
+}

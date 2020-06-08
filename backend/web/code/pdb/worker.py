@@ -1,6 +1,10 @@
 from psycopg2 import connect
 from psycopg2 import sql
 from psycopg2 import extras
+import psycopg2
+import json
+from ast import parse
+
 
 from .errors import NotValidConfiguration
 
@@ -36,6 +40,67 @@ class PostgresWorker:
                 return True
         except Exception:
             return False
+
+
+
+    def edit_prof(self, data):
+
+            name = data['name']
+            value = data['value']
+            update_request = (f"UPDATE users SET {name} = %s WHERE id=1;")
+
+
+
+            self.cursor.connection.rollback()
+            self.cursor.execute(update_request, (value, ))
+            self.conn.commit()
+            return True
+
+
+    def get_set_data(self):
+        try:
+            request = '''SELECT username, email, fullname, password FROM users WHERE id=1;'''
+            self.cursor.execute(request)
+
+            data = self.cursor.fetchall()
+            return data
+
+        except (Exception, psycopg2.Error) as error:
+            return error
+
+    def get_prof_data(self):
+        try:
+            request = '''SELECT username, fullname, avatar FROM users WHERE id=1;'''
+            self.cursor.execute(request)
+            
+            data = self.cursor.fetchall()
+            return data
+
+        except (Exception, psycopg2.Error) as error:
+            return error
+
+    def get_pass_data(self):
+        try:
+            request = '''SELECT password FROM users WHERE id=1;'''
+            self.cursor.execute(request)
+
+            data = self.cursor.fetchall()
+            return data
+        except (Exception, psycopg2.Error) as error:
+            return error
+
+    def edit_password(self, data):
+        password = data['value']
+
+        request = '''UPDATE users SET password = %s WHERE id = 1
+                   RETURNING id;'''
+
+
+        self.cursor.connection.rollback()
+        self.cursor.execute(request, (password,))
+
+        self.conn.commit()
+        return True
 
     def _validate_config(self, conf):
         required_fields = ['database', 'user', 'password', 'host', 'port']
