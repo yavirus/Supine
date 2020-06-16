@@ -57,31 +57,20 @@
 </div>
  <div class="col-xl-8 d-flex justify-content-center" id="memes-table">
     	<div class="row" id="row">
-        <div>
-      		<div class="col-md-6 col-lg-4" id="sec-col">
-      				<button class="col" id="section" onclick=" openSection()" onmousedown="changeColor(this)">
-      				memes
-      			</button>
-      		</div>
-          <div class="col-sm-8" id="subsec">
-
-          </div>
+        <div id="wrap-div" name="wrap_div">
+      	
+          
         </div>
-        <div>
+        <div id="wrap-div" class="add-input" name="wrap_div">
       		<div class="col-md-6 col-lg-4" id="sec-col">
-      			<button class="col"  id="section" onclick="openSection()" onmousedown="changeColor(this)">
-      				h&o
-      			</button>
-      		</div>
-        </div>
-        <div>
-      		<div class="col-md-6 col-lg-4" id="sec-col">
-      			<button class="col"  id="section" onclick="addSection(this)" onmousedown="changeColor(this)">
+      			<button class="col"  id="section" onclick="addAddInput(this)" onmousedown="changeColor(this)">
       				+
       			</button>
       		</div>
         </div>
-
+        <div class="col-lg-4" id="add-section-col">
+            <input type="text" class="col" id="add-section" maxlength="50" onkeypress="addSection(event, this)">
+          </div>
     </div>
   </div>
 
