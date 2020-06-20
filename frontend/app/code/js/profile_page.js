@@ -9,6 +9,8 @@ function openSection(btn){
 	memesTable = document.getElementById('memes-table');
 	addInput = document.getElementsByClassName('add-input').wrap_div;
 
+	removeAddInput();
+
 
 	if(!subRow.style.display){
 		for (var i = 0, max = allSubRow.length; i < max; i++) {
@@ -39,6 +41,24 @@ function openSection(btn){
 		subSecCol.style.order = 'unset';
 	}
 }
+async function saveSection(secName){
+	url = 'http://supine.local/api/v1/add-section';
+
+	let response = await fetch(url , {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json;charset=utf-8'
+			},
+			body: JSON.stringify(secName)
+		});
+
+		let result = await response.json();
+
+		console.log(result);
+		
+}
+	
+
 
 function addSection(event, input){
 	key = event.keyCode || event.wich;
@@ -51,6 +71,8 @@ function addSection(event, input){
 		newSubAddSection(wrap);
 
 		removeAddInput();
+
+		saveSection(wrap.querySelector('#section').textContent);
 	}
 
 }
@@ -89,14 +111,14 @@ function newSubAddSection(wrap){
 	wrap.appendChild(newSubRow);
 
 	newSubDiv = document.createElement('div');
-	newSubDiv.id = 'sub-sec-col';
+	newSubDiv.id = 'add-sub-sec-col';
 	newSubDiv.classList.add('col-sm-2');
-	newSubDiv.classList.add('sub-sec-col');
-	newSubDiv.setAttribute('name', 'sub_sec_col');
+	newSubDiv.classList.add('add-sub-sec-col');
+	newSubDiv.setAttribute('name', 'add_sub_sec_col');
 	newSubRow.appendChild(newSubDiv);
 
 	newSubBtn = document.createElement('button');
-	newSubBtn.id = 'sub-section';
+	newSubBtn.id = 'add-sub-section';
 	newSubBtn.classList.add('col');
 	newSubBtn.setAttribute('onmousedown', 'changeColor(this)');
 	newSubBtn.setAttribute('onclick', 'addSubInput(this.parentNode.parentNode)');
@@ -104,7 +126,7 @@ function newSubAddSection(wrap){
 	newSubDiv.appendChild(newSubBtn);
 
 	newSubInputDiv = document.createElement('div');
-	newSubInputDiv.id = 'add-sub-sec-col';
+	newSubInputDiv.id = 'add-sub-sec-input';
 	newSubInputDiv.classList.add('col-sm-2');
 	newSubRow.appendChild(newSubInputDiv);
 
@@ -119,7 +141,7 @@ function newSubAddSection(wrap){
 function addSubSection(event, input){
 	key = event.keyCode || event.wich;
 	row = input.parentNode.parentNode;
-	addInput = document.getElementsByClassName('sub-sec-col').sub_sec_col;
+	addInput = row.querySelector('.add-sub-sec-col');
 
 	if(key == 13){
 		newSubSection(row, addInput, input);
@@ -207,8 +229,8 @@ function closeSection(){
 
 
 function addSubInput(input){
-	addInput = input.querySelector('.sub-sec-col');
-	newSec = input.querySelector('#add-sub-sec-col');
+	addInput = input.querySelector('.add-sub-sec-col');
+	newSec = input.querySelector('#add-sub-sec-input');
 	newSecInput = input.querySelector('#add-sub-input');
 
 
@@ -246,6 +268,7 @@ function changeColor(btn){
 		btn.id = 'sub-section';
 	}
 }
+
 async function getUserData(){
 	url = 'http://supine.local/api/v1/get-prof-data'
 	let response = await fetch(url);
@@ -257,17 +280,20 @@ async function getUserData(){
 
 	insertValues(data);
 }
+
+async function getSectionData(){
+	url = 'http://supine.local/api/v1/get-sec-data'
+}
+
 function insertValues(data){
 
 	uname = document.createTextNode(data['username']);
 	fname = document.createTextNode(data['fullname']);
-	avatar = document.createTextNode(data['avatar']);
 
 	unameField = document.getElementById('username');
 	fnameField = document.getElementById('full-name');
-	avatarField = document.getElementById('prof-pic');
 
-	let array = [[unameField, uname], [fnameField, fname], [avatarField, avatar]];
+	let array = [[unameField, uname], [fnameField, fname]];
 	
 	for(const arr in array){
 
@@ -276,6 +302,5 @@ function insertValues(data){
 			}
 	}
 }
-
 
 

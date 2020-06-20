@@ -2,8 +2,13 @@ from psycopg2 import connect
 from psycopg2 import sql
 from psycopg2 import extras
 import psycopg2
+
+import base64
+from bitstring import BitArray
+
 import json
 from ast import parse
+
 
 
 from .errors import NotValidConfiguration
@@ -31,16 +36,37 @@ class PostgresWorker:
                     VALUES(%s, %s, %s)
                     RETURNING id;'''
 
+
+        self.cursor.connection.rollback()
+        self.cursor.execute(request, (username, password, email))
+        for record in self.cursor:
+            records.append({'id': record['id']})
+            user_id = record['id']
+            id = f'user_{user_id}_sec'
+            sec_request = f'''CREATE TABLE {id} (
+                                        sec_id SERIAL,
+                                        sec_name VARCHAR,
+                                        sub_sec TEXT
+                                        );'''
+
+            self.cursor.execute(sec_request)
+            self.conn.commit()
+            return True
+
+    def add_section(self, _sec_name):
+        records = []
+        request = '''INSERT INTO user_1_sec (sec_name)
+                    VALUES(%s)
+                    RETURNING sec_id;'''
+
         try:
             self.cursor.connection.rollback()
-            self.cursor.execute(request, (username, password, email))
-            for record in self.cursor:
-                records.append({'id': record['id']})
-                self.conn.commit()
-                return True
-        except Exception:
-            return False
+            self.cursor.execute(request, (_sec_name, ))
 
+            self.conn.commit()
+            return True
+        except Exception as e:
+            return e
 
 
     def edit_prof(self, data):
@@ -70,7 +96,7 @@ class PostgresWorker:
 
     def get_prof_data(self):
         try:
-            request = '''SELECT username, fullname, avatar FROM users WHERE id=1;'''
+            request = '''SELECT username, fullname FROM users WHERE id=1;'''
             self.cursor.execute(request)
             
             data = self.cursor.fetchall()

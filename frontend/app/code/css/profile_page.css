@@ -4,14 +4,24 @@
 	margin-top: 8%;
 }
 #prof-pic{
-	max-width: 29vh;
-	max-height: 29vh;
-	min-width: 29vh;
-	width: 29vh;
-	height: 29vh;
+	max-width: 25vh;
+	max-height: 25vh;
+	min-width: 25vh;
+	width: 25vh;
+	height: 25vh;
 	border-radius: 50%;
 	margin: auto;
+	display: flex;
+	justify-content: center;
 	
+}
+#prof-pic-pick{
+	position: absolute;
+	cursor: pointer;
+	width: 25vh;
+	height: 25vh;
+	opacity: 0;
+	border-radius: 50%;
 }
 #test-pic{
 	max-width: 25vh;
@@ -19,6 +29,8 @@
 	border-radius: 50%;
 	width: 25vh;
 	height: 25vh;
+	border: solid 1px;
+	border-color: #FF7514;
 }
 #u-f-name{
 	max-width: 100%;
@@ -98,7 +110,7 @@
 	font-size: 2vh;
 	overflow:hidden;
 }
-#add-sub-sec-col{
+#add-sub-sec-input{
 	display: none;
 	max-width: 20vh;
 	max-height: 3.5vh;
@@ -111,6 +123,11 @@ input:focus{
 	max-width: 100%;
 	max-height: 100%;
 	display: flex;
+	justify-content: center;
+}
+#main-row{
+	display: flex;
+	justify-content: center;
 }
 #memes-col{
 
@@ -148,7 +165,7 @@ button:focus{
 	margin: auto;
 
 }
-#sub-section{
+#sub-section, #add-sub-section{
 	text-align: center;
 	max-width: 20vh;
 	background-color: #FFFFFF;
@@ -162,7 +179,7 @@ button:focus{
 	border: solid 1px;
 	font-size: 2vh;
 }
-#sub-sec-col{
+#sub-sec-col, #add-sub-sec-col{
 	max-width: 20vh;
 	width: 20vh;
 	display: flex;

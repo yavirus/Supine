@@ -36,3 +36,9 @@ async def edit_password(request):
     edit_result = request.app['db'].edit_password(request_data)
     response = json.dumps(edit_result)
     return web.json_response(response)
+
+async def add_section(request):
+    request_data = await request.json()
+    add_result = request.app['db'].add_section(request_data)
+    response = json.dumps(add_result)
+    return web.json_response(response)
