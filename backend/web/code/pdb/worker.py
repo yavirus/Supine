@@ -3,9 +3,6 @@ from psycopg2 import sql
 from psycopg2 import extras
 import psycopg2
 
-import base64
-from bitstring import BitArray
-
 import json
 from ast import parse
 
@@ -24,7 +21,6 @@ class PostgresWorker:
         return self.disconnect()
 
     def save_user(self, contents):
-        records = []
         con_values = []
         for dict in contents:
             con_values.append(dict['value'])
@@ -40,13 +36,11 @@ class PostgresWorker:
         self.cursor.connection.rollback()
         self.cursor.execute(request, (username, password, email))
         for record in self.cursor:
-            records.append({'id': record['id']})
             user_id = record['id']
             id = f'user_{user_id}_sec'
             sec_request = f'''CREATE TABLE {id} (
                                         sec_id SERIAL,
-                                        sec_name VARCHAR,
-                                        sub_sec TEXT
+                                        sec_name VARCHAR
                                         );'''
 
             self.cursor.execute(sec_request)
@@ -54,20 +48,73 @@ class PostgresWorker:
             return True
 
     def add_section(self, _sec_name):
-        records = []
         request = '''INSERT INTO user_1_sec (sec_name)
                     VALUES(%s)
                     RETURNING sec_id;'''
 
-        try:
-            self.cursor.connection.rollback()
-            self.cursor.execute(request, (_sec_name, ))
 
+        self.cursor.connection.rollback()
+        self.cursor.execute(request, (_sec_name, ))
+        for record in self.cursor:
+            sec_id = record['sec_id']
+            id = f'_{sec_id}_sub_sec'
+            sub_table_req = f'''CREATE TABLE {id} (
+                                sub_sec_id SERIAL,
+                                user_id SERIAL,
+                                sub_sec_name VARCHAR
+                                
+                            );'''
+
+            self.cursor.execute(sub_table_req)
             self.conn.commit()
             return True
-        except Exception as e:
-            return e
 
+    def get_sec_data(self):
+        request = '''SELECT (sec_name, sec_id) FROM user_1_sec;'''
+        self.cursor.execute(request)
+
+        sec_data = self.cursor.fetchall()
+        data = []
+        sub_data = []
+        response = {}
+        for row in sec_data:
+            sec_id_list = row['row']
+            sec_id = sec_id_list.strip(')(').split(',')  # list of section name and id actually
+            data.append(sec_id[0])
+
+            sub_request = f'''SELECT (sub_sec_name) FROM _{sec_id[1]}_sub_sec WHERE user_id = 1;'''
+            self.cursor.execute(sub_request)
+            sub_name = self.cursor.fetchall()
+            for row in sub_name:
+                sub_data.append(dict(row)['sub_sec_name'])
+
+            response[data[0]] = sub_data;
+
+            data = []
+            sub_data = []
+
+        return response
+
+
+    def add_sub_sec(self, data):
+        sec_name = data[0]
+        sec_request = f'''SELECT sec_id FROM user_1_sec WHERE sec_name = %s;'''
+        sub_sec_name = data[1]
+
+
+        self.cursor.execute(sec_request, (sec_name, ))
+        sec_id_arr = self.cursor.fetchall()
+        sec_id = sec_id_arr[0]['sec_id']
+        table_name = f'_{sec_id}_sub_sec'
+
+        request = f'''INSERT INTO {table_name} (sub_sec_name, user_id)
+                            VALUES(%s, 1)
+                            RETURNING sub_sec_id;'''
+
+        self.cursor.connection.rollback()
+        self.cursor.execute(request, (sub_sec_name, ))
+        self.conn.commit()
+        return True
 
     def edit_prof(self, data):
 

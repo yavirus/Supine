@@ -1,13 +1,14 @@
 getUserData();
+getSectionData();
 
 function openSection(btn){
-	subRow = btn.parentNode.parentNode.querySelector('#sub-row');
-	allSubRow = document.getElementsByName('sub_row');
-	wrapDiv = document.getElementsByName('wrap_div');
-	subSecCol = btn.parentNode.parentNode;
-	sectionRow = document.getElementById('row');
-	memesTable = document.getElementById('memes-table');
-	addInput = document.getElementsByClassName('add-input').wrap_div;
+	let subRow = btn.parentNode.parentNode.querySelector('#sub-row');
+	let allSubRow = document.getElementsByName('sub_row');
+	let wrapDiv = document.getElementsByName('wrap_div');
+	let subSecCol = btn.parentNode.parentNode;
+	let sectionRow = document.getElementById('row');
+	let memesTable = document.getElementById('memes-table');
+	let addInput = document.getElementsByClassName('add-input').wrap_div;
 
 	removeAddInput();
 
@@ -42,7 +43,7 @@ function openSection(btn){
 	}
 }
 async function saveSection(secName){
-	url = 'http://supine.local/api/v1/add-section';
+	let url = 'http://supine.local/api/v1/add-section';
 
 	let response = await fetch(url , {
 			method: 'POST',
@@ -58,15 +59,30 @@ async function saveSection(secName){
 		
 }
 	
+async function saveSubSection(sec_name, subSecName){
+	let url = 'http://supine.local/api/v1/add-sub-section';
+	let secData = [sec_name, subSecName];
 
+	let response = await fetch(url , {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json;charset=utf-8'
+			},
+			body: JSON.stringify(secData)
+		});
+
+		let result = await response.json();
+
+		console.log(result);
+}
 
 function addSection(event, input){
-	key = event.keyCode || event.wich;
-	row = document.getElementById('row');
-	addInput = document.getElementsByClassName('add-input').wrap_div;
+	let key = event.keyCode || event.wich;
+	let row = document.getElementById('row');
+	let addInput = document.getElementsByClassName('add-input').wrap_div;
 
 	if(key == 13){
-		wrap = newSection(row, addInput, input);
+		wrap = newSection(row, addInput, input.value);
 
 		newSubAddSection(wrap);
 
@@ -76,8 +92,8 @@ function addSection(event, input){
 	}
 
 }
-function newSection(row, addInput, input){
-	newWrap = document.createElement('div');
+function newSection(row, addInput, title){
+	let newWrap = document.createElement('div');
 	newWrap.id = 'wrap-div';
 	newWrap.name = 'wrap_div';
 	newWrap.setAttribute('name', 'wrap_div');
@@ -85,39 +101,39 @@ function newSection(row, addInput, input){
 
 	addInput.style.order = newWrap.style.order +1;
 
-	newDiv = document.createElement('div');
+	let newDiv = document.createElement('div');
 	newDiv.id = 'sec-col';
 	newDiv.classList.add('col-md-6');
 	newDiv.classList.add('col-lg-4');
 	newWrap.appendChild(newDiv);
 
-	newButton = document.createElement('button');
+	let newButton = document.createElement('button');
 	newButton.id = 'section';
 	newButton.classList.add('col');
 	newDiv.appendChild(newButton);
 
 	newButton.setAttribute('onclick', 'openSection(this)');
 	newButton.setAttribute('onmousedown', 'changeColor(this)');
-	btnText = document.createTextNode(input.value);
+	let btnText = document.createTextNode(title);
 	newButton.appendChild(btnText);
 
 	return newWrap;
 }
 function newSubAddSection(wrap){
-	newSubRow = document.createElement('div');
+	let newSubRow = document.createElement('div');
 	newSubRow.id = 'sub-row';
 	newSubRow.classList.add('row');
 	newSubRow.setAttribute('name', 'sub_row');
 	wrap.appendChild(newSubRow);
 
-	newSubDiv = document.createElement('div');
+	let newSubDiv = document.createElement('div');
 	newSubDiv.id = 'add-sub-sec-col';
 	newSubDiv.classList.add('col-sm-2');
 	newSubDiv.classList.add('add-sub-sec-col');
 	newSubDiv.setAttribute('name', 'add_sub_sec_col');
 	newSubRow.appendChild(newSubDiv);
 
-	newSubBtn = document.createElement('button');
+	let newSubBtn = document.createElement('button');
 	newSubBtn.id = 'add-sub-section';
 	newSubBtn.classList.add('col');
 	newSubBtn.setAttribute('onmousedown', 'changeColor(this)');
@@ -125,51 +141,58 @@ function newSubAddSection(wrap){
 	newSubBtn.appendChild(document.createTextNode('+'));
 	newSubDiv.appendChild(newSubBtn);
 
-	newSubInputDiv = document.createElement('div');
+	let newSubInputDiv = document.createElement('div');
 	newSubInputDiv.id = 'add-sub-sec-input';
 	newSubInputDiv.classList.add('col-sm-2');
 	newSubRow.appendChild(newSubInputDiv);
 
-	newSubInput = document.createElement('input');
+	let newSubInput = document.createElement('input');
 	newSubInput.id = 'add-sub-input';
 	newSubInput.classList.add('col');
 	newSubInput.setAttribute('max-length', 50);
 	newSubInput.setAttribute('onkeypress', 'addSubSection(event, this)');
 	newSubInputDiv.appendChild(newSubInput);
 
+	return newSubRow;
+
 }
 function addSubSection(event, input){
-	key = event.keyCode || event.wich;
-	row = input.parentNode.parentNode;
-	addInput = row.querySelector('.add-sub-sec-col');
+	let key = event.keyCode || event.wich;
+	let row = input.parentNode.parentNode;
+	let addInput = row.querySelector('.add-sub-sec-col');
+	let secName = row.parentNode.querySelector('#sec-col').firstChild.textContent;
 
 	if(key == 13){
-		newSubSection(row, addInput, input);
+		let subTitle = newSubSection(row, addInput, input.value);
 
 		removeSubInput(input);
+
+		saveSubSection(secName, subTitle);
 	}
 }
 function newSubSection(row, addInput, input){
-	newDiv = document.createElement('div');
+	let newDiv = document.createElement('div');
 	newDiv.id = 'sub-sec-col';
 	newDiv.classList.add('col-sm-2');
 	row.appendChild(newDiv);
 
 	addInput.style.order = newDiv.style.order +1;
 
-	newButton = document.createElement('button');
+	let newButton = document.createElement('button');
 	newButton.id = 'sub-section';
 	newButton.classList.add('col');
 	newDiv.appendChild(newButton);
 
 	newButton.setAttribute('onmousedown', 'changeColor(this)');
-	btnText = document.createTextNode(input.value);
+	let btnText = document.createTextNode(input);
 	newButton.appendChild(btnText);
+
+	return newButton.textContent
 
 }
 
 function removeSubInput(input){
-	newSec = input.parentNode;
+	let newSec = input.parentNode;
 
 	if(newSec.style.display){
 		input.value = null;
@@ -178,8 +201,8 @@ function removeSubInput(input){
 }
 
 function removeAddInput(){
-	newSec = document.getElementById('add-section-col');
-	newSecInput = document.getElementById('add-section');
+	let newSec = document.getElementById('add-section-col');
+	let newSecInput = document.getElementById('add-section');
 
 	if(newSec.style.display){
 		newSecInput.value = null;
@@ -189,9 +212,9 @@ function removeAddInput(){
 }
 
 function addAddInput(){
-	addInput = document.getElementsByClassName('add-input').wrap_div;
-	newSec = document.getElementById('add-section-col');
-	newSecInput = document.getElementById('add-section');
+	let addInput = document.getElementsByClassName('add-input').wrap_div;
+	let newSec = document.getElementById('add-section-col');
+	let newSecInput = document.getElementById('add-section');
 
 	if(!newSec.style.display){
 		closeSection();
@@ -207,11 +230,11 @@ function addAddInput(){
 }
 
 function closeSection(){
-	allSubRow = document.getElementsByName('sub_row');
-	wrapDiv = document.getElementsByName('wrap_div');
-	sectionRow = document.getElementById('row');
-	memesTable = document.getElementById('memes-table');
-	addInput = document.getElementsByClassName('add-input').wrap_div;
+	let allSubRow = document.getElementsByName('sub_row');
+	let wrapDiv = document.getElementsByName('wrap_div');
+	let sectionRow = document.getElementById('row');
+	let memesTable = document.getElementById('memes-table');
+	let addInput = document.getElementsByClassName('add-input').wrap_div;
 
 	for (var i = 0, max = allSubRow.length; i < max; i++) {
    			 allSubRow[i].style.display = null;
@@ -229,9 +252,9 @@ function closeSection(){
 
 
 function addSubInput(input){
-	addInput = input.querySelector('.add-sub-sec-col');
-	newSec = input.querySelector('#add-sub-sec-input');
-	newSecInput = input.querySelector('#add-sub-input');
+	let addInput = input.querySelector('.add-sub-sec-col');
+	let newSec = input.querySelector('#add-sub-sec-input');
+	let newSecInput = input.querySelector('#add-sub-input');
 
 
 	if(!newSec.style.display){
@@ -270,28 +293,60 @@ function changeColor(btn){
 }
 
 async function getUserData(){
-	url = 'http://supine.local/api/v1/get-prof-data'
+	let url = 'http://supine.local/api/v1/get-prof-data';
+
 	let response = await fetch(url);
 
 	
 	let result = await response.json();
-	preData = JSON.parse(result);
-	data = preData[0];
+	let preData = JSON.parse(result);
+	let data = preData[0];
 
 	insertValues(data);
 }
 
 async function getSectionData(){
-	url = 'http://supine.local/api/v1/get-sec-data'
+	let url = 'http://supine.local/api/v1/get-sec-data';
+
+	let response = await fetch(url);
+	let result = await response.json();
+
+	let data = JSON.parse(result);
+	console.log(data);
+
+	for(let [key, value] of Object.entries(data)){
+		subRow = await insertSecData(key);
+		insertSubSecData(subRow, value);
+	}
+}
+
+
+function insertSecData(data){
+	let row = document.getElementById('row');
+	let addInput = document.getElementsByClassName('add-input').wrap_div;
+
+	let wrap = newSection(row, addInput, data);
+	let subRow = newSubAddSection(wrap);
+
+	return subRow;
+}
+
+function insertSubSecData(row, data){
+	let addInput = row.querySelector('.add-sub-sec-col');
+	for(name in data){
+		newSubSection(row, addInput, data[name]);
+	}
+
+	
 }
 
 function insertValues(data){
 
-	uname = document.createTextNode(data['username']);
-	fname = document.createTextNode(data['fullname']);
+	let uname = document.createTextNode(data['username']);
+	let fname = document.createTextNode(data['fullname']);
 
-	unameField = document.getElementById('username');
-	fnameField = document.getElementById('full-name');
+	let unameField = document.getElementById('username');
+	let fnameField = document.getElementById('full-name');
 
 	let array = [[unameField, uname], [fnameField, fname]];
 	

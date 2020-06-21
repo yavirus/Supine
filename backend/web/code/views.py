@@ -42,3 +42,14 @@ async def add_section(request):
     add_result = request.app['db'].add_section(request_data)
     response = json.dumps(add_result)
     return web.json_response(response)
+
+async def get_sec_data(request):
+    sec_data = request.app['db'].get_sec_data()
+    response = json.dumps(sec_data)
+    return web.json_response(response)
+
+async def add_sub_sec(request):
+    request_data = await request.json()
+    add_result = request.app['db'].add_sub_sec(request_data)
+    response = json.dumps(add_result)
+    return web.json_response(response)

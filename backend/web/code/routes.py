@@ -5,7 +5,9 @@ from views import (
     get_pass_data,
     edit_password,
     edit_prof,
-    add_section
+    add_section,
+    get_sec_data,
+    add_sub_sec
 )
 
 BASE_API_URL = '/api/v1'
@@ -18,3 +20,5 @@ def setup_routes(app):
     app.router.add_post(BASE_API_URL + '/edit-password', edit_password)
     app.router.add_post(BASE_API_URL + '/edit-prof', edit_prof)
     app.router.add_post(BASE_API_URL + '/add-section', add_section)
+    app.router.add_get(BASE_API_URL + '/get-sec-data', get_sec_data)
+    app.router.add_post(BASE_API_URL + '/add-sub-section', add_sub_sec)
