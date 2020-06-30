@@ -17,20 +17,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="810e0a30-9295-4e4d-9084-21fadb0be6f7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/app/code/css/test-pic2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/code/css/test-pic3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/code/css/test-pic4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/code/feed.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/web/code/pdb/worker.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/code/pdb/worker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/web/code/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/code/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/web/code/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/code/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/web/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/code/js/create_user.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/code/js/create_user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/code/js/profile_page.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/code/js/profile_page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/code/js/settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/code/js/settings.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/app/conf/conf_d/supine.conf" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/conf/conf_d/supine.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,7 +177,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592642666828</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="client connection error">
+      <created>1593492960761</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1593492960761</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -257,7 +254,8 @@
     <MESSAGE value="functional settings page with password and profile info change" />
     <MESSAGE value="profile page frontend developing" />
     <MESSAGE value="adding sections 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding sections 1" />
+    <MESSAGE value="client connection error" />
+    <option name="LAST_COMMIT_MESSAGE" value="client connection error" />
   </component>
   <component name="WindowStateProjectService">
     <state x="124" y="193" width="536" height="491" key="#Notifications" timestamp="1589624748276">
@@ -272,10 +270,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="245" y="354" width="560" height="396" key="#com.intellij.fileTypes.FileTypeChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1589624079604" />
-    <state x="890" y="176" width="912" height="904" key="CommitChangelistDialog2" timestamp="1592642666691">
+    <state x="502" y="102" width="912" height="904" key="CommitChangelistDialog2" timestamp="1593492960587">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="890" y="176" width="912" height="904" key="CommitChangelistDialog2/67.27.1853.1053@67.27.1853.1053" timestamp="1592642666691" />
+    <state x="502" y="102" width="912" height="904" key="CommitChangelistDialog2/67.27.1853.1053@67.27.1853.1053" timestamp="1593492960587" />
     <state x="313" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1590129523148">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -288,10 +286,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="167" y="125" width="726" height="855" key="ShowDiffWithBranchDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1589624141651" />
-    <state x="125" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1592642677578">
+    <state x="125" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1593492978225">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="125" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1592642677578" />
+    <state x="125" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1593492978225" />
     <state x="250" y="247" width="539" height="612" key="git4idea.branch.GitSmartOperationDialog" timestamp="1589716503806">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>

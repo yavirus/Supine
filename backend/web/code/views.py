@@ -8,10 +8,12 @@ async def save_user(request):
     request_data = await request.json()
     save_result = request.app['db'].save_user(request_data)
     response = json.dumps(save_result)
-    if response:
-        cookie = {'username': response}
-        requests.get('http://sup-ine.com', cookies=cookie)
-    return web.json_response(response)
+
+    session = request.app['PERSISTENT_SESSION']
+    async with session.get('http://sup-ine.com') as resp:
+        return web.json_response(resp.status)
+
+
 
 async def edit_prof(request):
     request_data = await request.json()
