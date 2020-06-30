@@ -40,7 +40,7 @@ function changeColor(btn){
 }
 
 async function getUserData(){
-	url = 'http://supine.local/api/v1/get-set-data'
+	url = 'http://sup-ine.com/api/v1/get-set-data'
 	let response = await fetch(url);
 
 	
@@ -184,7 +184,7 @@ async function checkCurPass(){
 async function editPassword(){
 	password = $('#password-form').serializeArray();
 	passData = JSON.stringify(password[1]);
-	let url = 'http://supine.local/api/v1/edit-password'
+	let url = 'http://sup-ine.com/api/v1/edit-password'
 
 	let response = await fetch(url, {
 		method: 'POST',
@@ -199,7 +199,7 @@ async function editPassword(){
 	console.log(result);
 
 	if(result.ok){
-		window.location.replace('http://supine.local/settings.html');
+		window.location.replace('http://sup-ine.com/settings.html');
 	}
 	else{
 		alert('Something went wrong');
@@ -413,7 +413,7 @@ function validFname(){
 
 async function editProf(){
 	profForm = $('#prof-form').serializeArray();
-	let url = 'http://supine.local/api/v1/edit-prof';
+	let url = 'http://sup-ine.com/api/v1/edit-prof';
 
 	for(let i = 0; i < profForm.length; i++){
 		profData = JSON.stringify(profForm[i]);

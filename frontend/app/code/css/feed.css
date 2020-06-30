@@ -1,0 +1,154 @@
+.block{
+	max-width: 35em;
+	width: 35em;
+	max-height: 50em;
+	margin-bottom: 2%;
+	display: flex;
+	justify-content: center;
+}
+#post-row{
+	max-width: 35em;
+	width: 35em;
+	margin-bottom: 2%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+#rating{
+	max-width: 4vh;
+	max-height: 4vh;
+	width: 4vh;
+	height: 4vh;
+	border-radius: 50%;
+	border: solid 1px;
+	border-color: #CCCCCC;
+	color: #464544;
+	display: flex;
+	justify-content: center;
+
+}
+#rating-div{
+	margin: 1%;
+}
+#rating-h6{
+	margin-top: 25%;
+}
+#rating-count-div{
+	color: #464544;
+	margin: 2.5%;
+}
+#header-avatar-img{
+	max-width: 4vh;
+	max-height: 4vh;
+	width: 4vh;
+	height: 4vh;
+	border-radius: 50%;
+	border: solid 1px;
+	border-color: #CCCCCC;
+	object-fit: cover;
+}
+#header-avatar{
+	margin: 1%;
+}
+#header-uname{
+	margin: 2.5%;
+}
+#header-uname-h6{
+	color: #464544;
+}
+#post-header{
+	border-radius: 2%;
+	width: 38em;
+	max-width: 38em;
+	max-height: 5vh;
+	height: 5vh;
+	display: flex;
+}
+#post-footer{
+	border-radius: 2%;
+	width: 38em;
+	max-width: 38em;
+	max-height: 5vh;
+	height: 5vh;
+	display: flex;
+}
+#meme{
+	border-radius: 2%;
+	border: solid 1px;
+	max-width: 35.1em;
+	width: 35.1em;
+	max-height: 50em;
+	margin-bottom: 2%;
+	display: flex;
+	flex-wrap: wrap;
+	border-color: #CCCCCC;
+	justify-content: center;
+}
+#block-pic{
+	max-width: 35em;
+	min-width: 35em;
+	max-height: 40em;
+	object-fit: cover;
+}
+.container{
+	margin-top: 4%;
+	max-width: 50%!important;
+	display: flex;
+	justify-content: left;
+}
+.feed-div{
+	max-width: 77%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+#profile-block{
+	border: solid 1px;
+	border-radius: 2%;
+	border-color: #CCCCCC;
+	max-width: 35em;
+	width: 35em;
+	max-height: 40em;
+	margin-bottom: 2%;
+	display: flex;
+	justify-content: center;
+}
+#avatar-img{
+	max-width: 18vh;
+	max-height: 18vh;
+	min-width: 18vh;
+	width: 18vh;
+	height: 18vh;
+	border-radius: 50%;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	object-fit: cover;
+}
+#sub-sec, #avatar{
+	display: flex;
+	justify-content: center;
+	border: solid 1px;
+	border-radius: 2%;
+	border-color:#CCCCCC;
+	max-height: 18.5vh;
+	max-width: 18.5vh;
+	margin: 0.5%;
+}
+
+#sub-sec-img{
+	max-height: 18vh;
+	max-width: 18vh;
+	width: 18vh;
+	height: 18vh;
+	display: flex;
+}
+#prof-info{
+	text-align: center;
+	color: #FF7514;
+	max-width: 35em;
+	width: 35em;
+	max-height: 12em;
+	height: 10em;
+}
+

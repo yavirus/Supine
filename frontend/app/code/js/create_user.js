@@ -8,7 +8,7 @@ async function sendUserData() {
 		
 		let userData = JSON.stringify($("#sign-up-form").serializeArray());
 
-		let response = await fetch('http://supine.local/api/v1/create-user', {
+		let response = await fetch('http://sup-ine.com/api/v1/create-user', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json;charset=utf-8'
@@ -24,7 +24,7 @@ async function sendUserData() {
 			notUniqueuname();
 		}
 		else if(result == "true"){
-			window.location.replace('http://supine.local/profile_page.html');
+			window.location.replace('http://sup-ine.com/profile_page.html');
 		}
 }
 function notUniqueuname(){

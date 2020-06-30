@@ -43,7 +43,7 @@ function openSection(btn){
 	}
 }
 async function saveSection(secName){
-	let url = 'http://supine.local/api/v1/add-section';
+	let url = 'http://sup-ine.com/api/v1/add-section';
 
 	let response = await fetch(url , {
 			method: 'POST',
@@ -60,7 +60,7 @@ async function saveSection(secName){
 }
 	
 async function saveSubSection(sec_name, subSecName){
-	let url = 'http://supine.local/api/v1/add-sub-section';
+	let url = 'http://sup-ine.com/api/v1/add-sub-section';
 	let secData = [sec_name, subSecName];
 
 	let response = await fetch(url , {
@@ -293,7 +293,7 @@ function changeColor(btn){
 }
 
 async function getUserData(){
-	let url = 'http://supine.local/api/v1/get-prof-data';
+	let url = 'http://sup-ine.com/api/v1/get-prof-data';
 
 	let response = await fetch(url);
 
@@ -306,7 +306,7 @@ async function getUserData(){
 }
 
 async function getSectionData(){
-	let url = 'http://supine.local/api/v1/get-sec-data';
+	let url = 'http://sup-ine.com/api/v1/get-sec-data';
 
 	let response = await fetch(url);
 	let result = await response.json();

@@ -2,12 +2,15 @@ from aiohttp import web
 from psycopg2 import connect
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 import json
-
+import requests
 
 async def save_user(request):
     request_data = await request.json()
     save_result = request.app['db'].save_user(request_data)
     response = json.dumps(save_result)
+    if response:
+        cookie = {'username': response}
+        requests.get('http://sup-ine.com', cookies=cookie)
     return web.json_response(response)
 
 async def edit_prof(request):

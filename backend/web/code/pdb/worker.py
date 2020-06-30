@@ -45,7 +45,7 @@ class PostgresWorker:
 
             self.cursor.execute(sec_request)
             self.conn.commit()
-            return True
+            return username
 
     def add_section(self, _sec_name):
         request = '''INSERT INTO user_1_sec (sec_name)

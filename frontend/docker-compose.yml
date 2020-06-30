@@ -7,7 +7,7 @@ services:
     ports:
       - '80:80'
     volumes:
-      - ./app/code:/www/data
+      - ./app/code:/data/www
     networks:
       - supine
 
