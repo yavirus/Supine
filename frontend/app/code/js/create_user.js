@@ -16,16 +16,15 @@ async function sendUserData() {
 			body: userData
 		});
 
-		let result = await response.json();
+		
 
-		console.log(result);
-
-		if(result == "false"){
+		/*if(!result){
 			notUniqueuname();
 		}
-		else if(result == "true"){
+		else if(result){
+			*/
 			window.location.replace('http://sup-ine.com/profile_page.html');
-		}
+		//}
 }
 function notUniqueuname(){
 		let unameForm = document.getElementById("uname-form");

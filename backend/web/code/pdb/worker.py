@@ -45,10 +45,10 @@ class PostgresWorker:
 
             self.cursor.execute(sec_request)
             self.conn.commit()
-            return username
+            return user_id
 
-    def add_section(self, _sec_name):
-        request = '''INSERT INTO user_1_sec (sec_name)
+    def add_section(self, _sec_name, user_id):
+        request = f'''INSERT INTO user_{user_id}_sec (sec_name)
                     VALUES(%s)
                     RETURNING sec_id;'''
 
@@ -69,8 +69,9 @@ class PostgresWorker:
             self.conn.commit()
             return True
 
-    def get_sec_data(self):
-        request = '''SELECT (sec_name, sec_id) FROM user_1_sec;'''
+    def get_sec_data(self, user_id):
+        request = f'''SELECT (sec_name, sec_id) FROM user_{user_id}_sec;'''
+        self.cursor.connection.rollback()
         self.cursor.execute(request)
 
         sec_data = self.cursor.fetchall()
@@ -82,7 +83,8 @@ class PostgresWorker:
             sec_id = sec_id_list.strip(')(').split(',')  # list of section name and id actually
             data.append(sec_id[0])
 
-            sub_request = f'''SELECT (sub_sec_name) FROM _{sec_id[1]}_sub_sec WHERE user_id = 1;'''
+            sub_request = f'''SELECT (sub_sec_name) FROM _{sec_id[1]}_sub_sec WHERE user_id = {user_id};'''
+            self.cursor.connection.rollback()
             self.cursor.execute(sub_request)
             sub_name = self.cursor.fetchall()
             for row in sub_name:
@@ -96,19 +98,19 @@ class PostgresWorker:
         return response
 
 
-    def add_sub_sec(self, data):
+    def add_sub_sec(self, data, user_id):
         sec_name = data[0]
-        sec_request = f'''SELECT sec_id FROM user_1_sec WHERE sec_name = %s;'''
+        sec_request = f'''SELECT sec_id FROM user_{user_id}_sec WHERE sec_name = %s;'''
         sub_sec_name = data[1]
 
-
+        self.cursor.connection.rollback()
         self.cursor.execute(sec_request, (sec_name, ))
         sec_id_arr = self.cursor.fetchall()
         sec_id = sec_id_arr[0]['sec_id']
         table_name = f'_{sec_id}_sub_sec'
 
         request = f'''INSERT INTO {table_name} (sub_sec_name, user_id)
-                            VALUES(%s, 1)
+                            VALUES(%s, {user_id})
                             RETURNING sub_sec_id;'''
 
         self.cursor.connection.rollback()
@@ -116,11 +118,11 @@ class PostgresWorker:
         self.conn.commit()
         return True
 
-    def edit_prof(self, data):
+    def edit_prof(self, data, user_id):
 
             name = data['name']
             value = data['value']
-            update_request = (f"UPDATE users SET {name} = %s WHERE id=1;")
+            update_request = (f"UPDATE users SET {name} = %s WHERE id={user_id};")
 
 
 
@@ -130,9 +132,10 @@ class PostgresWorker:
             return True
 
 
-    def get_set_data(self):
+    def get_set_data(self, user_id):
         try:
-            request = '''SELECT username, email, fullname, password FROM users WHERE id=1;'''
+            request = f'''SELECT username, email, fullname, password FROM users WHERE id={user_id};'''
+            self.cursor.connection.rollback()
             self.cursor.execute(request)
 
             data = self.cursor.fetchall()
@@ -141,9 +144,10 @@ class PostgresWorker:
         except (Exception, psycopg2.Error) as error:
             return error
 
-    def get_prof_data(self):
+    def get_prof_data(self, user_id):
         try:
-            request = '''SELECT username, fullname FROM users WHERE id=1;'''
+            request = f'''SELECT username, fullname FROM users WHERE id={user_id};'''
+            self.cursor.connection.rollback()
             self.cursor.execute(request)
             
             data = self.cursor.fetchall()
@@ -152,9 +156,10 @@ class PostgresWorker:
         except (Exception, psycopg2.Error) as error:
             return error
 
-    def get_pass_data(self):
+    def get_pass_data(self, user_id):
         try:
-            request = '''SELECT password FROM users WHERE id=1;'''
+            request = f'''SELECT password FROM users WHERE id={user_id};'''
+            self.cursor.connection.rollback()
             self.cursor.execute(request)
 
             data = self.cursor.fetchall()
@@ -162,10 +167,10 @@ class PostgresWorker:
         except (Exception, psycopg2.Error) as error:
             return error
 
-    def edit_password(self, data):
+    def edit_password(self, data, user_id):
         password = data['value']
 
-        request = '''UPDATE users SET password = %s WHERE id = 1
+        request = f'''UPDATE users SET password = %s WHERE id = {user_id}
                    RETURNING id;'''
 
 
