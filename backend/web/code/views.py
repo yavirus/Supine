@@ -4,18 +4,21 @@ from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 import json
 import requests
 from aiohttp_session import get_session
+from PIL import Image
+from PIL import ImageDraw
 
 
 async def save_user(request):
     request_data = await request.json()
     save_result = request.app['db'].save_user(request_data)
+    await new_session(request, save_result)
+
+async def new_session(request, user_id):
     session = await get_session(request)
     exc = web.HTTPFound(location='/')
-    exc.set_cookie('user_id', save_result)
-    session['user_id'] = save_result
+    exc.set_cookie('user_id', user_id)
+    session['user_id'] = user_id
     raise exc
-
-
 
 async def get_cookies(request):
     session = await get_session(request)
@@ -77,3 +80,13 @@ async def add_sub_sec(request):
     add_result = request.app['db'].add_sub_sec(request_data, user_id)
     response = json.dumps(add_result)
     return web.json_response(response)
+
+async def upload_avatar(request):
+    data = await request.post()
+
+    img_file = data['image'].file
+    img_name = data['image'].filename
+
+    image = Image.open(img_file)
+    image.save(f'file_storage/avatars/{img_name}')
+    return web.json_response(True)

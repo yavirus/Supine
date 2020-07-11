@@ -358,4 +358,15 @@ function insertValues(data){
 	}
 }
 
+async function uploadAvatar(){
+	let image = document.getElementById("prof-pic-pick").files[0];
+	let formData = new FormData();
+
+	formData.append('image', image);
+	let response = await fetch('http://sup-ine.com/api/v1/upload-avatar', {
+			method: 'POST',
+			body: formData
+		});
+
+}
 

@@ -10,7 +10,17 @@ RUN apk update && apk add gcc postgresql-dev musl-dev python3-dev
 RUN apk add --no-cache \
         libressl-dev \
         musl-dev \
-        libffi-dev
+        libffi-dev\
+        jpeg-dev \
+        zlib-dev \
+        freetype-dev \
+        lcms2-dev \
+        openjpeg-dev \
+        tiff-dev \
+        tk-dev \
+        tcl-dev \
+        harfbuzz-dev \
+        fribidi-dev
 
 COPY requirements.txt .
 RUN pip3 install --upgrade pip && \

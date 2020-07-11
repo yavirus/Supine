@@ -33,7 +33,37 @@
         </ul>
     </div>
 </nav>
-<div class="container">
+<div class="container" id="main-container">
+	<div id="words-block">
+		<header id="block-header">
+			<h6 id="block-header-h6">Your Key Words</h6>
+		</header>
+		<div id="mode-sel-div">
+			<div class="button-div">
+				<button class="key-word-btn" onmousedown="changeColor(this)">All</button>
+			</div>
+			<div class="button-div">
+				<button class="key-word-btn" onmousedown="changeColor(this)">New</button>
+			</div>
+		</div>
+		<div id="words-contents">
+			<div class="key-word-div">
+				<div class="key-word">
+					<label for="word-checkbox">Ricardo</label>
+					<input type="checkbox" class="word-checkbox" name="word-checkbox">
+					<span class="checkmark"></span>
+				</div>
+			</div>
+			<div class="key-word-div">
+				<div class="key-word">
+					<label for="word-checkbox">Ricardo</label>
+					<input type="checkbox" class="word-checkbox" name="word-checkbox">
+					<span class="checkmark"></span>
+				</div>
+			</div>
+		</div>
+		<div id="word-add-div"></div>
+	</div>
 	<div class="feed-div">
 			<div class="block">
 				<div class="col" id="meme">
