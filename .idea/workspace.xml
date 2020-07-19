@@ -17,19 +17,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="810e0a30-9295-4e4d-9084-21fadb0be6f7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/avatars/shrekwgun.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/avatars/shrekwgun2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/code/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/client.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/avatars/857e7fe3-c21c-4fe9-9eaf-25beff230770.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/avatars/d77199b6-b82f-4043-8b36-06eabba325c2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/server.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/shrek.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/web/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/dj/code/tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/dj/code/tools.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/web/code/pdb/worker.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/code/pdb/worker.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/web/code/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/code/routes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/web/code/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/code/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/web/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/code/css/feed.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/code/css/feed.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/code/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/code/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/code/css/profile_page.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/code/css/profile_page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/code/feed.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/code/feed.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/code/js/feed.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/code/js/feed.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/app/code/js/profile_page.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/code/js/profile_page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/app/code/profile_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/code/profile_page.html" afterDir="false" />
     </list>
@@ -41,8 +39,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -96,11 +94,12 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/backend/web/code" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/frontend/app/code" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -205,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593497183182</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="row avatar saving algorithm">
+      <created>1594443820841</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1594443820841</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -277,7 +283,8 @@
     <MESSAGE value="adding sections 1" />
     <MESSAGE value="client connection error" />
     <MESSAGE value="client connection error with aiohttp" />
-    <option name="LAST_COMMIT_MESSAGE" value="client connection error with aiohttp" />
+    <MESSAGE value="row avatar saving algorithm" />
+    <option name="LAST_COMMIT_MESSAGE" value="row avatar saving algorithm" />
   </component>
   <component name="WindowStateProjectService">
     <state x="124" y="193" width="536" height="491" key="#Notifications" timestamp="1589624748276">
@@ -292,26 +299,26 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="245" y="354" width="578" height="396" key="#com.intellij.fileTypes.FileTypeChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1594442399725" />
-    <state x="502" y="102" width="912" height="904" key="CommitChangelistDialog2" timestamp="1593497183115">
+    <state x="502" y="102" width="912" height="904" key="CommitChangelistDialog2" timestamp="1594443820693">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="502" y="102" width="912" height="904" key="CommitChangelistDialog2/67.27.1853.1053@67.27.1853.1053" timestamp="1593497183115" />
+    <state x="502" y="102" width="912" height="904" key="CommitChangelistDialog2/67.27.1853.1053@67.27.1853.1053" timestamp="1594443820693" />
     <state x="313" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1590129523148">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="313" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1590129523148" />
-    <state x="85" y="350" key="SettingsEditor" timestamp="1594373207067">
+    <state x="85" y="350" key="SettingsEditor" timestamp="1594633533676">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="85" y="350" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1594373207067" />
+    <state x="85" y="350" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1594633533676" />
     <state x="167" y="125" width="726" height="855" key="ShowDiffWithBranchDialog" timestamp="1589624141651">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="167" y="125" width="726" height="855" key="ShowDiffWithBranchDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1589624141651" />
-    <state x="125" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1593497191029">
+    <state x="125" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1594443830744">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="125" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1593497191029" />
+    <state x="125" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1594443830744" />
     <state x="211" y="118" width="618" height="870" key="find.popup" timestamp="1594014577823">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -324,9 +331,9 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="184" y="259" width="672" height="678" key="search.everywhere.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1592629168768" />
-    <state x="225" y="400" width="540" height="216" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1594443722308">
+    <state x="225" y="400" width="540" height="216" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1594904607596">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="225" y="400" width="540" height="216" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1594443722308" />
+    <state x="225" y="400" width="540" height="216" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1594904607596" />
   </component>
 </project>

@@ -5,3 +5,4 @@ requests==2.24.0
 cryptography==2.9.2
 aiohttp_session==2.9.0
 Pillow==7.2.0
+tqdm==4.47.0

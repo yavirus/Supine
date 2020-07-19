@@ -30,7 +30,8 @@ def create_tables(c):
                         h_and_o VARCHAR, 
                         password VARCHAR,
                         email VARCHAR,
-                        fullname VARCHAR
+                        fullname VARCHAR,
+                        avatar VARCHAR
                         );''')
 
 

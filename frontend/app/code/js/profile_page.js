@@ -363,10 +363,20 @@ async function uploadAvatar(){
 	let formData = new FormData();
 
 	formData.append('image', image);
-	let response = await fetch('http://sup-ine.com/api/v1/upload-avatar', {
-			method: 'POST',
-			body: formData
-		});
+	
 
-}
+	let response = await fetch('http://sup-ine.com/api/v1/upload-avatar', {
+		method: 'POST',
+		body: formData
+	});
+}/*
+async function insertAvatar(){
+	let url = 'http://sup-ine.com/api/v1/get-av-data';
+
+	let response = await fetch(url);
+	
+	let result = await response.json()
+	console.log(result)
+}*/
+
 

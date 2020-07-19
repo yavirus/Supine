@@ -3,9 +3,7 @@ from psycopg2 import sql
 from psycopg2 import extras
 import psycopg2
 
-import json
-from ast import parse
-
+from PIL import Image
 
 
 from .errors import NotValidConfiguration
@@ -179,6 +177,29 @@ class PostgresWorker:
 
         self.conn.commit()
         return True
+
+    def save_avatar(self, url, user_id):
+        request = f'''UPDATE users SET avatar = %s WHERE id = {user_id}
+                          RETURNING id;'''
+
+        self.cursor.connection.rollback()
+        self.cursor.execute(request, (url,))
+
+        self.conn.commit()
+        return True
+
+    def get_av_data(self, user_id):
+        request = f'SELECT avatar FROM users WHERE id = {user_id}'
+
+        self.cursor.connection.rollback()
+        self.cursor.execute(request)
+
+        image_list = self.cursor.fetchall()
+        image_dict = image_list[0]
+        for key in image_dict:
+            image = Image.open(image_dict[key])
+            return image
+
 
     def _validate_config(self, conf):
         required_fields = ['database', 'user', 'password', 'host', 'port']
