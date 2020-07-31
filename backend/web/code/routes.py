@@ -9,7 +9,7 @@ from views import (
     get_sec_data,
     add_sub_sec,
     upload_avatar,
-    server_listen
+    get_av_data
 )
 
 BASE_API_URL = '/api/v1'
@@ -25,4 +25,4 @@ def setup_routes(app):
     app.router.add_get(BASE_API_URL + '/get-sec-data', get_sec_data)
     app.router.add_post(BASE_API_URL + '/add-sub-section', add_sub_sec)
     app.router.add_post(BASE_API_URL + '/upload-avatar', upload_avatar)
-    app.router.add_get(BASE_API_URL + '/server-listen', server_listen)
+    app.router.add_get(BASE_API_URL + '/get-av-data', get_av_data)

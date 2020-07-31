@@ -22,21 +22,47 @@
 	height: 25vh;
 	opacity: 0;
 	border-radius: 50%;
+
+}
+#add-section-pic{
+	position: absolute;
+	cursor: pointer;
+	opacity: 0;
+	max-width: 19.5vh;
+	min-width: 19.5vh;
+	max-height: 15.8vh;
+	min-height: 15.8vh;
+	left: 0;
+}
+#new-meme-pic{
+	max-width: 19.5vh;
+	min-width: 19.5vh;
+	max-height: 15.8vh;
+	min-height: 15.8vh;
+}
+#add-section-pic-div{
+	max-width: 19.5vh;
+    min-width: 19.5vh;
+    max-height: 15.8vh;
+    min-height: 15.8vh;
+    left: 0;
+    top: 0;
+    position: absolute;
 }
 #test-pic{
 	max-width: 25vh;
 	max-height: 25vh;
+	min-height: 25vh;
+	min-width: 25vh;
 	border-radius: 50%;
-	width: 25vh;
-	height: 25vh;
 	border: solid 1px;
 	border-color: #FF7514;
+	object-fit: cover;
 }
 #u-f-name{
 	max-width: 100%;
 	text-align: center;
 	padding: 3%;
-	width: 60%;
 	margin-left: -4%;
 	border-bottom: solid 1px;
 	border-color: #FF7514;
@@ -53,6 +79,7 @@
 	justify-content: center;
 	font-size: 3vh;
 	color:#FF7514;
+	flex-wrap: nowrap;
 }
 #set-btn{
 	max-width: 25%;
@@ -71,30 +98,16 @@
 	border-radius: 5%;
 	min-height: 4.7vh;
 	height: 4.7vh;
-	width: 20vh;
-	font-family: 'Baloo 2', cursive;
-	color: #FF7514;
-	border-color: #FF7514!important;
-	border: solid 1px;
-	font-size: 3vh;
-	overflow:hidden;
-}
-#add-section{
-	text-align: center;
-	margin-bottom: 8%;
-	background-color: #FFFFFF;
-	border-radius: 5%;
-	min-height: 4.5vh;
-	height: 4.5vh;
-	max-width: 17vh;
-	width: 17vh;
+	width: 14vh;
 	font-family: 'Baloo 2', cursive;
 	color: #FF7514;
 	border-color: #FF7514!important;
 	border: solid 1px;
 	font-size: 2.5vh;
 	overflow:hidden;
+	margin-top: 45%;
 }
+
 #add-sub-input{
 	text-align: center;
 	background-color: #FFFFFF;
@@ -200,8 +213,79 @@ button:focus{
 	font-size: 2vh;
 }
 
-
 #add-section-col{
 	display: none;
-	max-width: 100%;
+	position: absolute;
+	bottom: 92%;
+	max-width: 20vh;
+	max-height: 20vh;
+	min-height: 20vh;
+	min-width: 20vh;
+	background-color: #FFFFFF;
+	border-radius: 10px;
+	font-family: 'Baloo 2', cursive;
+	border: solid 1px #CCCCCC;
+	justify-content: center;
+	z-index:99;
+}
+#add-section{
+	max-width: 19.5vh;
+	max-height: 4vh;
+	min-height: 4vh;
+	min-width: 19.5vh;
+	text-align: center;
+	color: #464544;
+	font-size: 2.5vh;
+	overflow:hidden;
+	border: none;
+	border-top: solid 1px #CCCCCC;
+	margin-top: 81%;
+	border-radius: 10px;
+	border-top-right-radius: unset;
+	border-top-left-radius: unset;
+}
+.sec-col-img{
+	min-width: 100%;
+    min-height: 100%!important;
+}
+.section-img{
+	text-align: center;
+	margin-bottom: 8%;
+	background-color: #FFFFFF;
+	border-radius: 8px;
+	font-family: 'Baloo 2', cursive;
+	color: #FF7514;
+	border-color: #FF7514!important;
+	border: solid 1px;
+	font-size: 2.5vh;
+	overflow:hidden;
+	min-width: 14vh;
+    min-height: 12vh!important;
+    max-width: 14vh;
+    max-height: 12vh!important;
+    padding: 0!important;
+}
+.wrap-div-img{
+	order: unset;
+    min-width: 14vh;
+    min-height: 12vh;
+    display: flex;
+    justify-content: center;
+}
+.sec-title{
+    margin-bottom: 0;
+    font-size: 2.2vh;
+    border-top: solid 1px;
+    max-height: 2.5vh;
+}
+.sec-image{
+	min-height: 9.3vh;
+	max-height: 9.3vh!important;
+	min-width: 13.9vh;
+	max-height: 13.9vh;
+	border-top-right-radius: 8px;
+	border-top-left-radius: 8px;
+	border: none;
+	object-fit: cover;
+
 }

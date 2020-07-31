@@ -38,28 +38,30 @@ class PostgresWorker:
             id = f'user_{user_id}_sec'
             sec_request = f'''CREATE TABLE {id} (
                                         sec_id SERIAL,
-                                        sec_name VARCHAR
+                                        sec_name VARCHAR,
+                                        sec_image VARCHAR
                                         );'''
 
             self.cursor.execute(sec_request)
             self.conn.commit()
             return user_id
 
-    def add_section(self, _sec_name, user_id):
-        request = f'''INSERT INTO user_{user_id}_sec (sec_name)
-                    VALUES(%s)
+    def add_section(self, _sec_name, user_id, url):
+        request = f'''INSERT INTO user_{user_id}_sec (sec_name, sec_image)
+                    VALUES(%s, %s)
                     RETURNING sec_id;'''
 
 
         self.cursor.connection.rollback()
-        self.cursor.execute(request, (_sec_name, ))
+        self.cursor.execute(request, (_sec_name, url))
         for record in self.cursor:
             sec_id = record['sec_id']
-            id = f'_{sec_id}_sub_sec'
+            id = f'_{user_id}_{sec_id}_sub_sec'
             sub_table_req = f'''CREATE TABLE {id} (
                                 sub_sec_id SERIAL,
                                 user_id SERIAL,
-                                sub_sec_name VARCHAR
+                                sub_sec_name VARCHAR,
+                                sub_sec_image VARCHAR
                                 
                             );'''
 
@@ -68,7 +70,7 @@ class PostgresWorker:
             return True
 
     def get_sec_data(self, user_id):
-        request = f'''SELECT (sec_name, sec_id) FROM user_{user_id}_sec;'''
+        request = f'''SELECT (sec_name, sec_image, sec_id) FROM user_{user_id}_sec;'''
         self.cursor.connection.rollback()
         self.cursor.execute(request)
 
@@ -78,17 +80,18 @@ class PostgresWorker:
         response = {}
         for row in sec_data:
             sec_id_list = row['row']
-            sec_id = sec_id_list.strip(')(').split(',')  # list of section name and id actually
+            sec_id = sec_id_list.strip(')(').split(',')  # list of section name, section image and id actually
             data.append(sec_id[0])
+            data.append(sec_id[1])
 
-            sub_request = f'''SELECT (sub_sec_name) FROM _{sec_id[1]}_sub_sec WHERE user_id = {user_id};'''
+            sub_request = f'''SELECT (sub_sec_name) FROM _{user_id}_{sec_id[2]}_sub_sec WHERE user_id = {user_id};'''
             self.cursor.connection.rollback()
             self.cursor.execute(sub_request)
             sub_name = self.cursor.fetchall()
             for row in sub_name:
                 sub_data.append(dict(row)['sub_sec_name'])
 
-            response[data[0]] = sub_data;
+            response[(data[0], data[1])] = sub_data
 
             data = []
             sub_data = []
@@ -105,7 +108,7 @@ class PostgresWorker:
         self.cursor.execute(sec_request, (sec_name, ))
         sec_id_arr = self.cursor.fetchall()
         sec_id = sec_id_arr[0]['sec_id']
-        table_name = f'_{sec_id}_sub_sec'
+        table_name = f'_{user_id}_{sec_id}_sub_sec'
 
         request = f'''INSERT INTO {table_name} (sub_sec_name, user_id)
                             VALUES(%s, {user_id})
@@ -197,8 +200,7 @@ class PostgresWorker:
         image_list = self.cursor.fetchall()
         image_dict = image_list[0]
         for key in image_dict:
-            image = Image.open(image_dict[key])
-            return image
+            return image_dict[key]
 
 
     def _validate_config(self, conf):

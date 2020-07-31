@@ -1,35 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BranchesTreeState">
-    <expand>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </expand>
+    <expand />
     <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:develop" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="810e0a30-9295-4e4d-9084-21fadb0be6f7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/web/code/client.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/avatars/857e7fe3-c21c-4fe9-9eaf-25beff230770.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/avatars/d77199b6-b82f-4043-8b36-06eabba325c2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/web/code/server.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/web/code/shrek.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/avatars/032078d3-842a-466c-a88c-270e5ff8344e.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/avatars/036287ba-0306-4d31-b671-a7c661d95d94.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/avatars/07652bf8-d528-485f-a1fb-cd0bf1de8bb6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/avatars/17068258-1783-46d4-87e6-1e6bdc2f664a.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/avatars/17ca86ed-843e-4f31-b6c8-33c57fb03290.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/avatars/2185ab51-4f59-40ba-a16e-3437ab7cc61c.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/avatars/23728f9e-db71-482c-bbd7-db5e6bcffc1f.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/avatars/26912212-3227-47cb-a70e-39f324997f8b.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/avatars/3563ffc7-b23f-4cd0-8174-5333276c2a87.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/avatars/5ed90faa-6eb4-466d-ad15-de18e2e51172.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/avatars/621f2a92-a77b-488a-847f-e1581cf5fd7a.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/avatars/6587ff10-2280-4b8b-a5b2-32fddfe76bde.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/avatars/714760e0-f10a-4733-b1c3-d6b4b522f6c4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/avatars/78c289cd-538c-4694-9692-e21e23ecf0f8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/avatars/79c899fe-9788-436c-8417-6baf14a354e9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/avatars/8fd806b5-86f1-4c98-83bb-e9a5dec8783d.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/avatars/97a49d3e-22cc-4b31-bfeb-0fd77af911f3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/avatars/9866f965-a95a-4bb1-a0b8-ce9b812cc797.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/avatars/a138ab4a-68ff-4e11-93ff-f2c5d5e3746e.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/avatars/a6d1580b-80cc-47e4-af4d-c5ba6442148d.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/avatars/c2a177ec-82e0-48dc-95dc-331a92a1b01f.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/avatars/cd8450e5-15f4-4cac-8a97-1a09cccd1578.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/avatars/ce492c3f-39e9-4432-9cc1-f018151488fb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/avatars/d68a517e-cad6-4b71-a85c-f4e01aa416f7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/avatars/f2d8d8c7-10f5-4eab-ad09-e6e485276481.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/sections/031f4249-43b9-4599-a47f-82b69f49f129.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/sections/0626980b-7c74-4183-9a85-21c9398da4b0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/sections/071b24f8-0c00-4a5f-8dbb-228f5aea42bb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/sections/0ba085dd-8c10-4388-816d-ed0811d99f2f.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/sections/1cbe9cd2-5350-4407-b016-efa50cddde19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/sections/32e56307-8118-4982-b518-f39d3043035f.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/sections/403850fc-a554-4d45-aeb2-8dc891d52da7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/sections/447209bb-3f9c-4a45-91aa-32d4e5757099.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/sections/45c3cc02-4c6d-43f6-82ca-37ed32b3ad0f.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/sections/482d669d-7a0d-4ed6-835a-3ade7db5f3c5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/sections/5dca37b0-cbac-4602-9a87-8a79a431ccd6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/sections/637552ff-589d-402f-b428-da2eaef2284a.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/sections/6494465c-d3ae-4f22-9b79-51617be96a6a.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/sections/68926d08-258f-4cf9-8b57-9f99e59aa596.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/sections/6944acef-f522-404e-bb62-8c277ca27bd5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/sections/6bc1750b-061d-4ee1-8d45-e1196fff8c72.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/sections/6bf0006a-4fb4-49f1-8cff-4b8dd5e71d77.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/sections/746c7788-9086-4a58-a86c-b9bfaf3e575f.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/sections/753405f1-8577-456e-977d-f143f736d463.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/sections/76a23edf-9577-440b-8887-fed103830cb5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/sections/77bfc402-6e1e-4c09-b80a-d87a9042a0ac.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/sections/7ce1bc14-40b7-411d-8631-2ed5058cae11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/sections/83c0ae7b-0999-447d-8dcb-214db69157b1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/sections/868c9b33-b15c-4330-a72d-2855f61b5dc9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/sections/9221322f-4ce3-42f8-928b-7cc6d75295ba.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/sections/9b6c2834-944d-4aa5-b378-c1490102047a.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/sections/cf0d9694-9ec1-487b-8e25-ba22852eb892.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/sections/d61437dd-3619-4979-b2c2-1b32a104896e.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/sections/e4e7b74d-15d2-49ec-87fd-c8aac6880b9d.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/sections/e61dd9c5-6aa8-4be7-88d9-46f0348f1aa8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/sections/ebe9f21b-054e-4619-acd8-3c8e187ca9d3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/sections/ed060b27-d3ca-48b0-9700-c75b88cecc50.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/sections/f0477bdf-75cf-48f0-82a3-f56c31187d61.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/sections/f1d2ac54-e157-4c69-a7fb-1e7413dea632.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/code/file_storage/sections/fd0261b1-178e-41db-bbe2-1c76b11b4241.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/dj/code/tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/dj/code/tools.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/web/code/pdb/worker.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/code/pdb/worker.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/web/code/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/code/routes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/web/code/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/code/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/web/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/code/css/profile_page.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/code/css/profile_page.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/app/code/js/profile_page.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/code/js/profile_page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/app/code/profile_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/code/profile_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/conf/conf_d/supine.conf" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/conf/conf_d/supine.conf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +126,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="RESET_MODE" value="HARD" />
+    <option name="RESET_MODE" value="KEEP" />
   </component>
   <component name="ProjectId" id="1byVSA9BwHrI9MeT2Og7VcalJuF" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -90,6 +139,8 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/frontend/app/code" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -211,7 +262,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594443820841</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="row avatar saving algorithm 2">
+      <created>1595158653872</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1595158653872</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -225,21 +283,16 @@
                   <entry key="Show.Git.Branches" value="true" />
                 </map>
               </option>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="develop" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
               <option name="TEXT_FILTER_SETTINGS">
                 <TextFilterSettings>
                   <option name="MATCH_CASE" value="true" />
                 </TextFilterSettings>
+              </option>
+              <option name="COLUMN_WIDTH">
+                <map>
+                  <entry key="2" value="42" />
+                  <entry key="3" value="77" />
+                </map>
               </option>
             </State>
           </value>
@@ -284,7 +337,8 @@
     <MESSAGE value="client connection error" />
     <MESSAGE value="client connection error with aiohttp" />
     <MESSAGE value="row avatar saving algorithm" />
-    <option name="LAST_COMMIT_MESSAGE" value="row avatar saving algorithm" />
+    <MESSAGE value="row avatar saving algorithm 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="row avatar saving algorithm 2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="124" y="193" width="536" height="491" key="#Notifications" timestamp="1589624748276">
@@ -299,10 +353,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="245" y="354" width="578" height="396" key="#com.intellij.fileTypes.FileTypeChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1594442399725" />
-    <state x="502" y="102" width="912" height="904" key="CommitChangelistDialog2" timestamp="1594443820693">
+    <state x="502" y="102" width="912" height="904" key="CommitChangelistDialog2" timestamp="1595158653671">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="502" y="102" width="912" height="904" key="CommitChangelistDialog2/67.27.1853.1053@67.27.1853.1053" timestamp="1594443820693" />
+    <state x="502" y="102" width="912" height="904" key="CommitChangelistDialog2/67.27.1853.1053@67.27.1853.1053" timestamp="1595158653671" />
     <state x="313" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1590129523148">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -315,18 +369,18 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="167" y="125" width="726" height="855" key="ShowDiffWithBranchDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1589624141651" />
-    <state x="125" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1594443830744">
+    <state x="125" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1595158665941">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="125" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1594443830744" />
+    <state x="125" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1595158665941" />
     <state x="211" y="118" width="618" height="870" key="find.popup" timestamp="1594014577823">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="211" y="118" width="618" height="870" key="find.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1594014577823" />
-    <state x="250" y="247" width="539" height="612" key="git4idea.branch.GitSmartOperationDialog" timestamp="1589716503806">
+    <state x="250" y="247" width="539" height="612" key="git4idea.branch.GitSmartOperationDialog" timestamp="1595166886889">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="250" y="247" width="539" height="612" key="git4idea.branch.GitSmartOperationDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1589716503806" />
+    <state x="250" y="247" width="539" height="612" key="git4idea.branch.GitSmartOperationDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1595166886889" />
     <state x="184" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1592629168768">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>

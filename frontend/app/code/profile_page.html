@@ -63,13 +63,21 @@
         </div>
         <div id="wrap-div" class="add-input" name="wrap_div">
       		<div class="col-md-6 col-lg-4" id="sec-col">
-      			<button class="col"  id="section" onclick="addAddInput(this)" onmousedown="changeColor(this)">
+      			<button class="col"  id="section" onclick="addAddInput(this)" onmousedown="changeColor(this)" style="margin-top: 10%;">
       				+
       			</button>
       		</div>
         </div>
+
+  </div>
         <div class="col-lg-4" id="add-section-col">
-            <input type="text" class="col" id="add-section" maxlength="50" onkeypress="addSection(event, this)">
+          <form name="section_form">
+            <input type="text" class="col" id="add-section" name="sec_title_inp"maxlength="50" onkeypress="addSection(event, this)">
+            <div id="add-section-pic-div">
+            <input type="file" class="col" id="add-section-pic" name="sec_image_inp"maxlength="50">
+            <img id="new-meme-pic" src="">
+          </div>
+        </form>
           </div>
     </div>
   </div>
