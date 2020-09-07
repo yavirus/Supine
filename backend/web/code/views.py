@@ -111,7 +111,16 @@ async def get_sec_data(request):
     data = {}
     for key in sec_data:
         if key[1] == "" or key[1] == '""':
-            data[key[0]] = sec_data[key]
+            data[str([key[0], key[2]])] = sec_data[key]
+            for sub_key in sec_data[key]:
+                if(sec_data[key][sub_key] != "" and
+                        sec_data[key][sub_key] != '""'):
+                    sub_url = sec_data[key][sub_key]
+                    with open(sub_url, 'rb') as f:
+                        sub_img = f.read()
+                        sub_image = base64.b64encode(sub_img)
+
+                        sec_data[key][sub_key] = sub_image
 
         else:
             url = key[1]
@@ -119,18 +128,48 @@ async def get_sec_data(request):
                 img = f.read()
                 image = base64.b64encode(img)
 
-                data[str([key[0], image])] = sec_data[key]
+                data[str([key[0], image, key[2]])] = sec_data[key]
 
+            for sub_key in sec_data[key]:
+                if(sec_data[key][sub_key] != "" and
+                        sec_data[key][sub_key] != '""'):
+                    sub_url = sec_data[key][sub_key]
+                    with open(sub_url, 'rb') as f:
+                        sub_img = f.read()
+                        sub_image = base64.b64encode(sub_img)
+
+                        sec_data[key][sub_key] = sub_image.decode("utf-8")
+
+    print(data)
     response = json.dumps(data)
     return web.json_response(response)
 
 
 async def add_sub_sec(request):
     user_id = await get_cookies(request)
-    request_data = await request.json()
-    add_result = request.app['db'].add_sub_sec(request_data, user_id)
-    response = json.dumps(add_result)
-    return web.json_response(response)
+    data = await request.post()
+
+    try:
+        img_file = data['image'].file
+        img_name = uuid.uuid4()
+        url = f'file_storage/sub_sections/{img_name}.png'
+
+        sec_id = data['sec_id']
+        sec_title = data['title']
+
+        image = Image.open(img_file)
+        image.save(url)
+
+        request.app['db'].add_sub_sec(sec_id, sec_title, url, user_id)
+
+        return web.Response()
+    except Exception:
+        sec_title = data['title']
+        sec_id = data['sec_id']
+
+        request.app['db'].add_sub_sec(sec_id, sec_title, '', user_id)
+
+        return web.Response()
 
 
 async def upload_avatar(request):

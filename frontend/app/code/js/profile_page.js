@@ -6,27 +6,38 @@ function openSection(btn){
 	let subRow = btn.parentNode.parentNode.querySelector('#sub-row');
 	let allSubRow = document.getElementsByName('sub_row');
 	let wrapDiv = document.getElementsByName('wrap_div');
-	let subSecCol = btn.parentNode.parentNode;
+	let curWrapDiv = btn.parentNode.parentNode;
 	let sectionRow = document.getElementById('row');
 	let memesTable = document.getElementById('memes-table');
 	let addInput = document.getElementsByClassName('add-input').wrap_div;
+	let secCol = document.getElementsByName('sec_col');
+	let imgWrap = document.getElementsByName('wrap_div_img');
 
 	removeAddInput();
 
 
 	if(!subRow.style.display){
-		for (var i = 0, max = allSubRow.length; i < max; i++) {
+		for (let i = 0, max = allSubRow.length; i < max; i++) {
    			 allSubRow[i].style.display = null;
 		}
-		for (var i = 0, max = wrapDiv.length; i < max; i++){
+		for (let i = 0, max = wrapDiv.length; i < max; i++){
    			 	wrapDiv[i].style.order = 'initial';
    		}
+   		for (let i = 0, max = secCol.length; i < max; i++){
+   			secCol[i].setAttribute('style', 'margin-top: unset');
+   		}
+   		for (let i = 0, max = imgWrap.length; i < max; i++){
+   			 	imgWrap[i].style.order = -1;
+   		}
+	   		
 
+
+ 
    		addInput.style.order = 1;
 		subRow.style.display = 'flex';
 		sectionRow.style.flexDirection = 'column';
 		memesTable.setAttribute('style', 'justify-content: left !important');
-		subSecCol.style.order = -1;
+		curWrapDiv.style.order = -2;
 }
 
 	else{
@@ -36,11 +47,21 @@ function openSection(btn){
 		for (var i = 0, max = wrapDiv.length; i < max; i++){
    			 	wrapDiv[i].style.order = 'initial';
    		}
+   		for (let i = 0, max = secCol.length; i < max; i++){
+   			secCol[i].setAttribute('style', 'margin-top: 40%')
+   		}
+   		for (let i = 0, max = imgWrap.length; i < max; i++){
+   			 	imgWrap[i].style.order = -1;
+   		}
+
 
    		addInput.style.order = 1;
 		sectionRow.style.flexDirection = 'row';
 		memesTable.style.justifyContent = 'center';
-		subSecCol.style.order = 'unset';
+		if(curWrapDiv.name != 'wrap_div_img'){
+			curWrapDiv.style.order = 'unset';
+		}
+		
 	}
 }
 async function saveSection(secName, secImage){
@@ -62,46 +83,25 @@ async function saveSection(secName, secImage){
 
 }
 	
-async function saveSubSection(sec_name, subSecName){
+async function saveSubSection(secId, subSecName, image){
 	let url = 'http://sup-ine.com/api/v1/add-sub-section';
-	let secData = [sec_name, subSecName];
+	let formData = new FormData();
 
+	formData.append('sec_id', secId);
+	formData.append('title', subSecName);
+	formData.append('image', image);
 	let response = await fetch(url , {
 			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json;charset=utf-8'
-			},
-			body: JSON.stringify(secData)
+			body: formData
 		});
-
-		let result = await response.json();
-
-		console.log(result);
 }
 
-function addSection(event){
-	let data = document.forms.section_form
-	let title = data.elements.sec_title_inp.value
-	let image = data.elements.sec_image_inp.files[0]
-	let key = event.keyCode || event.wich;
-	let row = document.getElementById('row');
-	let addInput = document.getElementsByClassName('add-input').wrap_div;
 
-	if(key == 13){
-		wrap = newSection(row, addInput, title);
 
-		newSubAddSection(wrap);
-
-		removeAddInput();
-
-		saveSection(title, image);
-	}
-
-}
-
-function newSection(row, addInput, title){
+function newSection(row, addInput, data){
 	let newWrap = document.createElement('div');
-	newWrap.id = 'wrap-div';
+	newWrap.classList.add('wrap-div');
+	newWrap.id = data[1];
 	newWrap.name = 'wrap_div';
 	newWrap.setAttribute('name', 'wrap_div');
 	row.appendChild(newWrap);
@@ -110,6 +110,7 @@ function newSection(row, addInput, title){
 
 	let newDiv = document.createElement('div');
 	newDiv.id = 'sec-col';
+	newDiv.setAttribute('name', 'sec_col');
 	newDiv.classList.add('col-md-6');
 	newDiv.classList.add('col-lg-4');
 	newWrap.appendChild(newDiv);
@@ -121,7 +122,7 @@ function newSection(row, addInput, title){
 
 	newButton.setAttribute('onclick', 'openSection(this)');
 	newButton.setAttribute('onmousedown', 'changeColor(this)');
-	let btnText = document.createTextNode(title);
+	let btnText = document.createTextNode(data[0]);
 	newButton.appendChild(btnText);
 
 	return newWrap;
@@ -130,6 +131,7 @@ function newSection(row, addInput, title){
 function newImageSection(row, addInput, data){
 	let newWrap = document.createElement('div');
 	newWrap.classList.add('wrap-div-img');
+	newWrap.id = data[2];
 	newWrap.name = 'wrap_div_img';
 	newWrap.setAttribute('name', 'wrap_div_img');
 	row.appendChild(newWrap);
@@ -182,39 +184,64 @@ function newSubAddSection(wrap){
 	newSubBtn.id = 'add-sub-section';
 	newSubBtn.classList.add('col');
 	newSubBtn.setAttribute('onmousedown', 'changeColor(this)');
-	newSubBtn.setAttribute('onclick', 'addSubInput(this.parentNode.parentNode)');
+	newSubBtn.setAttribute('onclick', 'addSubInput(this)');
 	newSubBtn.appendChild(document.createTextNode('+'));
 	newSubDiv.appendChild(newSubBtn);
-
-	let newSubInputDiv = document.createElement('div');
-	newSubInputDiv.id = 'add-sub-sec-input';
-	newSubInputDiv.classList.add('col-sm-2');
-	newSubRow.appendChild(newSubInputDiv);
-
-	let newSubInput = document.createElement('input');
-	newSubInput.id = 'add-sub-input';
-	newSubInput.classList.add('col');
-	newSubInput.setAttribute('max-length', 50);
-	newSubInput.setAttribute('onkeypress', 'addSubSection(event, this)');
-	newSubInputDiv.appendChild(newSubInput);
 
 	return newSubRow;
 
 }
-function addSubSection(event, input){
+
+function addSection(event){
+	let data = document.forms.section_form;
+	let title = data.elements.sec_title_inp.value;
+	let image = data.elements.sec_image_inp.files[0];
 	let key = event.keyCode || event.wich;
-	let row = input.parentNode.parentNode;
-	let addInput = row.querySelector('.add-sub-sec-col');
-	let secName = row.parentNode.querySelector('#sec-col').firstChild.textContent;
+	let row = document.getElementById('row');
+	let addInput = document.getElementsByClassName('add-input').wrap_div;
 
 	if(key == 13){
-		let subTitle = newSubSection(row, addInput, input.value);
+		wrap = newSection(row, addInput, title);
 
-		removeSubInput(input);
+		newSubAddSection(wrap);
 
-		saveSubSection(secName, subTitle);
+		removeAddInput();
+
+		saveSection(title, image);
 	}
+
 }
+
+function addSubSection(event, secId){
+	let data = document.forms.section_form;
+	let title = data.elements.sec_title_inp.value;
+	let image = data.elements.sec_image_inp.files[0];
+	let key = event.keyCode || event.wich;
+	let row = document.getElementById(secId).querySelector('#sub-row');
+	let addInput = row.querySelector('.add-sub-sec-col');
+	if(row.parentNode.name == 'wrap_div_img'){
+
+		if(key == 13){
+			newSubSection(row, addInput, title);
+
+			removeAddInput();
+
+			saveSubSection(secId, title, image);
+		}
+	}
+	else if(row.parentNode.name == 'wrap_div'){
+
+		if(key == 13){
+			newSubSection(row, addInput, title);
+
+			removeAddInput();
+
+			saveSubSection(secId, title, image);
+		}
+	}
+	
+}
+
 function newSubSection(row, addInput, input){
 	let newDiv = document.createElement('div');
 	newDiv.id = 'sub-sec-col';
@@ -232,18 +259,36 @@ function newSubSection(row, addInput, input){
 	let btnText = document.createTextNode(input);
 	newButton.appendChild(btnText);
 
-	return newButton.textContent
 
 }
 
-function removeSubInput(input){
-	let newSec = input.parentNode;
+function newSubImageSection(row, addInput, title, image){
+	let newDiv = document.createElement('div');
+	newDiv.classList.add('sub-sec-col-img');
+	row.appendChild(newDiv);
 
-	if(newSec.style.display){
-		input.value = null;
-		newSec.style.display = null;
-	}
+	addInput.style.order = newDiv.style.order +1;
+
+	let newButton = document.createElement('button');
+	newButton.classList.add('sub-section-img');
+	newButton.classList.add('col');
+	newButton.setAttribute('onmousedown', 'changeColor(this)');
+	newDiv.appendChild(newButton);
+
+	let newImg = document.createElement('img');
+	newImg.classList.add('sub-sec-img');
+	newImg.src = "data:image/png;base64," + image;
+	newButton.appendChild(newImg);
+
+	let newTitle = document.createElement('div');
+	newTitle.classList.add('sub-sec-title');
+	let titleText = document.createTextNode(title);
+	newTitle.appendChild(titleText);
+	newButton.appendChild(newTitle);
+
+	return newTitle.textContent
 }
+
 
 function removeAddInput(){
 	let newSec = document.getElementById('add-section-col');
@@ -260,12 +305,14 @@ function addAddInput(){
 	let addInput = document.getElementsByClassName('add-input').wrap_div;
 	let newSec = document.getElementById('add-section-col');
 	let newSecInput = document.getElementById('add-section');
+	let sectionRow = document.getElementById('row');
 
 	if(!newSec.style.display){
 		closeSection();
 
 		newSecInput.value = null;
 		newSec.style.display = 'flex';
+		newSecInput.setAttribute('onkeypress', 'addSection(event, this)');
 
 	}
 	else{
@@ -291,15 +338,14 @@ function closeSection(){
 
 
 function addSubInput(input){
-	let addInput = input.querySelector('.add-sub-sec-col');
-	let newSec = input.querySelector('#add-sub-sec-input');
-	let newSecInput = input.querySelector('#add-sub-input');
-
+	let newSec = document.getElementById('add-section-col');
+	let newSecInput = document.getElementById('add-section');
+	let imageDiv = input.parentNode.parentNode.parentNode;
 
 	if(!newSec.style.display){
 		newSecInput.value = null;
 		newSec.style.display = 'flex';
-		newSec.style.order = addInput.style.order +1;
+		newSecInput.setAttribute('onkeypress', `addSubSection(event, ${imageDiv.id})`);
 	}
 	else{
 		newSecInput.value = null;
@@ -353,7 +399,7 @@ async function getSectionData(){
 	let data = JSON.parse(result);
 
 	for(let [key, value] of Object.entries(data)){
-		subRow = await insertSecData(key);
+		let subRow = await insertSecData(key);
 		insertSubSecData(subRow, value);
 	}
 }
@@ -363,12 +409,15 @@ function insertSecData(preData){
 	let row = document.getElementById('row');
 	let addInput = document.getElementsByClassName('add-input').wrap_div;
 
+	
+	let data1 = preData.split(/[\][]+/);
+	let data2 = data1[1].split(',');
+
 	try{
-		data1 = preData.split(/[\][]+/);
-		data2 = data1[1].split(',');
-		title = data2[0].split("'");
-		image = data2[1].split("'");
-		data = [title[1], image[1]];
+		let title = data2[0].split("'");
+		let image = data2[1].split("'");
+		let secId = data2[2].split("'");
+		let data = [title[1], image[1], secId[1]];
 
 		let wrap = newImageSection(row, addInput, data);
 		let subRow = newSubAddSection(wrap);
@@ -376,7 +425,10 @@ function insertSecData(preData){
 		return subRow;
 	}
 	catch{
-		let wrap = newSection(row, addInput, preData);
+		let title = data2[0].split("'");
+		let secId = data2[1].split("'");
+		let data = [title[1], secId[1]];
+		let wrap = newSection(row, addInput, data);
 		let subRow = newSubAddSection(wrap);
 
 		return subRow;
@@ -387,8 +439,16 @@ function insertSecData(preData){
 
 function insertSubSecData(row, data){
 	let addInput = row.querySelector('.add-sub-sec-col');
+
 	for(name in data){
-		newSubSection(row, addInput, data[name]);
+		if(data[name] == "" || data[name == "''"]){
+			newSubSection(row, addInput, name);
+		}
+		else{
+			newSubImageSection(row, addInput, name, data[name])
+		}
+
+		
 	}
 
 	

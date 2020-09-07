@@ -5,6 +5,7 @@ import psycopg2
 
 from PIL import Image
 
+from ast import literal_eval
 
 from .errors import NotValidConfiguration
 
@@ -76,46 +77,43 @@ class PostgresWorker:
 
         sec_data = self.cursor.fetchall()
         data = []
-        sub_data = []
+        sub_data = {}
         response = {}
         for row in sec_data:
             sec_id_list = row['row']
             sec_id = sec_id_list.strip(')(').split(',')  # list of section name, section image and id actually
             data.append(sec_id[0])
             data.append(sec_id[1])
+            data.append(sec_id[2])
 
-            sub_request = f'''SELECT (sub_sec_name) FROM _{user_id}_{sec_id[2]}_sub_sec WHERE user_id = {user_id};'''
+            sub_request = f'''SELECT (sub_sec_name, sub_sec_image) FROM _{user_id}_{sec_id[2]}_sub_sec WHERE user_id = {user_id};'''
             self.cursor.connection.rollback()
             self.cursor.execute(sub_request)
             sub_name = self.cursor.fetchall()
-            for row in sub_name:
-                sub_data.append(dict(row)['sub_sec_name'])
 
-            response[(data[0], data[1])] = sub_data
+            for row in sub_name:
+                sub_tuple = dict(row)['row'].split(',')
+
+                title = sub_tuple[0].split('(')[1]
+                url = sub_tuple[1].split(')')[0]
+
+                sub_data[title] = url
+            response[(data[0], data[1], data[2])] = sub_data
 
             data = []
             sub_data = []
 
         return response
 
-
-    def add_sub_sec(self, data, user_id):
-        sec_name = data[0]
-        sec_request = f'''SELECT sec_id FROM user_{user_id}_sec WHERE sec_name = %s;'''
-        sub_sec_name = data[1]
-
-        self.cursor.connection.rollback()
-        self.cursor.execute(sec_request, (sec_name, ))
-        sec_id_arr = self.cursor.fetchall()
-        sec_id = sec_id_arr[0]['sec_id']
+    def add_sub_sec(self, sec_id, title, url, user_id):
         table_name = f'_{user_id}_{sec_id}_sub_sec'
 
-        request = f'''INSERT INTO {table_name} (sub_sec_name, user_id)
-                            VALUES(%s, {user_id})
+        request = f'''INSERT INTO {table_name} (sub_sec_name, user_id, sub_sec_image)
+                            VALUES(%s, {user_id}, %s)
                             RETURNING sub_sec_id;'''
 
         self.cursor.connection.rollback()
-        self.cursor.execute(request, (sub_sec_name, ))
+        response = self.cursor.execute(request, (title, url))
         self.conn.commit()
         return True
 
