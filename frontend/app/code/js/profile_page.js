@@ -441,11 +441,12 @@ function insertSubSecData(row, data){
 	let addInput = row.querySelector('.add-sub-sec-col');
 
 	for(name in data){
-		if(data[name] == "" || data[name == "''"]){
+		if(data[name] == "" || data[name] == "''"){
 			newSubSection(row, addInput, name);
 		}
 		else{
-			newSubImageSection(row, addInput, name, data[name])
+			let image = data[name].split("'");
+			newSubImageSection(row, addInput, name, image[1]);
 		}
 
 		

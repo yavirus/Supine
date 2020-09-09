@@ -174,7 +174,7 @@ button:focus{
 	margin-top: 4%!important;
 	margin-bottom: 4%!important;
 	display: none;
-	margin: auto;
+	margin-left: 5%;
 
 }
 #sub-section, #add-sub-section{
@@ -190,7 +190,9 @@ button:focus{
 	border-color: #FF7514!important;
 	border: solid 1px;
 	font-size: 2vh;
+	margin-top: 2vh;
 }
+
 #sub-sec-col, #add-sub-sec-col{
 	max-width: 20vh;
 	width: 20vh;
@@ -263,7 +265,6 @@ button:focus{
 }
 .sec-col-img{
 	min-width: 100%;
-    min-height: 100%!important;
 }
 .section-img{
 	text-align: center;
@@ -304,23 +305,41 @@ button:focus{
 
 }
 .sub-sec-col-img{
-	min-width: 100%;
-    min-height: 100%!important;
+	min-width: 17vh;
+    min-height: 12vh;
+    max-width: 17vh;
+    max-height: 12vh;
+	object-fit: cover;
+	margin-top: 2vh!important;
+	margin: auto;
 }
 .sub-section-img{
 	text-align: center;
-	margin-bottom: 5%;
-	background-color: #FFFFFF;
-	border-radius: 3px;
-	font-family: 'Baloo 2', cursive;
-	color: #FF7514;
-	border-color: #FF7514!important;
-	border: solid 1px;
-	font-size: 1vh;
-	overflow:hidden;
-	min-width: 10vh;
-    min-height: 8vh!important;
-    max-width: 10vh!important;
-    max-height: 8vh!important;
+    margin-bottom: 8%;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    font-family: 'Baloo 2', cursive;
+    color: #FF7514;
+    border-color: #FF7514!important;
+    border: solid 1px;
+    font-size: 1.5vh;
+    overflow: hidden;
+    min-width: 17vh;
+    min-height: 12vh!important;
+    max-width: 17vh!important;
+    max-height: 12vh!important;
     padding: 0!important;
+}
+.sub-sec-img{
+	min-height: 9.3vh !important;
+	max-height: 9.3vh!important;
+	min-width: 16.9vh!important;
+	max-width: 16.9vh!important;
+	border-top-right-radius: 8px;
+	border-top-left-radius: 8px;
+	border: none;
+	object-fit: cover;
+}
+.sub-sec-title{
+
 }

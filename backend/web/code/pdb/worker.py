@@ -98,10 +98,11 @@ class PostgresWorker:
                 url = sub_tuple[1].split(')')[0]
 
                 sub_data[title] = url
+                
             response[(data[0], data[1], data[2])] = sub_data
 
             data = []
-            sub_data = []
+            sub_data = {}
 
         return response
 

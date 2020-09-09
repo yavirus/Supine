@@ -120,7 +120,10 @@ async def get_sec_data(request):
                         sub_img = f.read()
                         sub_image = base64.b64encode(sub_img)
 
-                        sec_data[key][sub_key] = sub_image
+                        sec_data[key][sub_key] = str(sub_image)
+
+                else:
+                    sec_data[key][sub_key] = ''
 
         else:
             url = key[1]
@@ -131,15 +134,18 @@ async def get_sec_data(request):
                 data[str([key[0], image, key[2]])] = sec_data[key]
 
             for sub_key in sec_data[key]:
-                if(sec_data[key][sub_key] != "" and
-                        sec_data[key][sub_key] != '""'):
+                if sec_data[key][sub_key] != '""':
                     sub_url = sec_data[key][sub_key]
                     with open(sub_url, 'rb') as f:
                         sub_img = f.read()
                         sub_image = base64.b64encode(sub_img)
 
-                        sec_data[key][sub_key] = sub_image.decode("utf-8")
+                        sec_data[key][sub_key] = str(sub_image)
 
+                else:
+                    sec_data[key][sub_key] = ''
+
+            
     print(data)
     response = json.dumps(data)
     return web.json_response(response)
