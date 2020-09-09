@@ -264,7 +264,7 @@ button:focus{
 	border-top-left-radius: unset;
 }
 .sec-col-img{
-	min-width: 100%;
+	margin-bottom: 2vh;
 }
 .section-img{
 	text-align: center;
@@ -312,6 +312,7 @@ button:focus{
 	object-fit: cover;
 	margin-top: 2vh!important;
 	margin: auto;
+	order: -1;
 }
 .sub-section-img{
 	text-align: center;
