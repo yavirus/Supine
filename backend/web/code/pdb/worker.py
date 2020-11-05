@@ -3,11 +3,15 @@ from psycopg2 import sql
 from psycopg2 import extras
 import psycopg2
 
+import datetime
+
 from PIL import Image
 
 from ast import literal_eval
 
 from .errors import NotValidConfiguration
+
+import base64
 
 
 class PostgresWorker:
@@ -34,44 +38,25 @@ class PostgresWorker:
 
         self.cursor.connection.rollback()
         self.cursor.execute(request, (username, password, email))
+        
         for record in self.cursor:
             user_id = record['id']
-            id = f'user_{user_id}_sec'
-            sec_request = f'''CREATE TABLE {id} (
-                                        sec_id SERIAL,
-                                        sec_name VARCHAR,
-                                        sec_image VARCHAR
-                                        );'''
-
-            self.cursor.execute(sec_request)
             self.conn.commit()
             return user_id
+        
 
     def add_section(self, _sec_name, user_id, url):
-        request = f'''INSERT INTO user_{user_id}_sec (sec_name, sec_image)
-                    VALUES(%s, %s)
+        request = f'''INSERT INTO sections (sec_title, sec_image, user_id)
+                    VALUES(%s, %s, {user_id})
                     RETURNING sec_id;'''
-
 
         self.cursor.connection.rollback()
         self.cursor.execute(request, (_sec_name, url))
-        for record in self.cursor:
-            sec_id = record['sec_id']
-            id = f'_{user_id}_{sec_id}_sub_sec'
-            sub_table_req = f'''CREATE TABLE {id} (
-                                sub_sec_id SERIAL,
-                                user_id SERIAL,
-                                sub_sec_name VARCHAR,
-                                sub_sec_image VARCHAR
-                                
-                            );'''
-
-            self.cursor.execute(sub_table_req)
-            self.conn.commit()
-            return True
+        self.conn.commit()
+        return True
 
     def get_sec_data(self, user_id):
-        request = f'''SELECT (sec_name, sec_image, sec_id) FROM user_{user_id}_sec;'''
+        request = f'''SELECT (sec_title, sec_image, sec_id) FROM sections WHERE user_id ={user_id};'''
         self.cursor.connection.rollback()
         self.cursor.execute(request)
 
@@ -86,7 +71,7 @@ class PostgresWorker:
             data.append(sec_id[1])
             data.append(sec_id[2])
 
-            sub_request = f'''SELECT (sub_sec_name, sub_sec_image) FROM _{user_id}_{sec_id[2]}_sub_sec WHERE user_id = {user_id};'''
+            sub_request = f'''SELECT (sub_sec_title, sub_sec_image) FROM sub_sections WHERE user_id = {user_id} AND sec_id = {sec_id[2]};'''
             self.cursor.connection.rollback()
             self.cursor.execute(sub_request)
             sub_name = self.cursor.fetchall()
@@ -107,14 +92,16 @@ class PostgresWorker:
         return response
 
     def add_sub_sec(self, sec_id, title, url, user_id):
-        table_name = f'_{user_id}_{sec_id}_sub_sec'
+        curr_time = datetime.datetime.now()
 
-        request = f'''INSERT INTO {table_name} (sub_sec_name, user_id, sub_sec_image)
-                            VALUES(%s, {user_id}, %s)
+        if url == '': url = None
+
+        request = f'''INSERT INTO sub_sections (sub_sec_title, user_id, sub_sec_image, upload_date, sec_id)
+                            VALUES(%s, {user_id}, %s, %s, {sec_id})
                             RETURNING sub_sec_id;'''
 
         self.cursor.connection.rollback()
-        response = self.cursor.execute(request, (title, url))
+        response = self.cursor.execute(request, (title, url, curr_time))
         self.conn.commit()
         return True
 
@@ -201,6 +188,46 @@ class PostgresWorker:
         for key in image_dict:
             return image_dict[key]
 
+    def get_all_posts(self):
+        request = f'''SELECT * FROM sub_sections WHERE sub_sec_image IS NOT NULL ORDER BY upload_date DESC LIMIT 20;'''
+
+        self.cursor.connection.rollback()
+        self.cursor.execute(request)
+
+        posts = self.cursor.fetchall()
+
+        def get_image(url):
+            with open(url, 'rb') as f:
+                image = base64.b64encode(f.read())
+                return str(image)
+
+        data = []
+        for row in posts:
+            user_id =  dict(row)['user_id']
+            sec_id = dict(row)['sec_id']
+            sub_sec_id = dict(row)['sub_sec_id']
+            sub_sec_title = dict(row)['sub_sec_title']
+            sub_sec_image = get_image(dict(row)['sub_sec_image'])
+            upload_date = dict(row)['upload_date']
+
+            request = f'SELECT (username, avatar) FROM users WHERE id = {user_id};'
+
+            self.cursor.connection.rollback()
+            self.cursor.execute(request)
+
+            user_data = self.cursor.fetchall()
+            
+            for row in user_data:
+                sub_tuple = dict(row)['row'].split(',')
+                username = sub_tuple[0].split('(')[1]
+                if sub_tuple[1].split(')')[0] != 'f':
+                    avatar = get_image(sub_tuple[1].split(')')[0])
+                else:
+                    avatar = None
+
+                data.append([username, sub_sec_title, sub_sec_image, avatar])
+
+        return data
 
     def _validate_config(self, conf):
         required_fields = ['database', 'user', 'password', 'host', 'port']

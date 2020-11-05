@@ -1,13 +1,11 @@
 version: '3.7'
 
 services:
-  front:
+  vue-ui:
     build: ./app
-    image: supine-front:0.0.1
-    ports:
-      - '80:80'
+    image: supine-vue:0.0.1
     volumes:
-      - ./app/code:/data/www
+      - ./app/code:/app
     networks:
       - supine
 

@@ -1,9 +1,6 @@
-FROM nginx:latest
+FROM node:14.3.0-alpine3.10
 
-COPY conf/nginx.conf /etc/nginx/nginx.conf
-COPY conf/conf_d /etc/nginx/conf.d
+WORKDIR /
+COPY ./code ./
 
-RUN mkdir -p /data/www
-COPY code /data/www
-
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["npm", "run", "serve"]

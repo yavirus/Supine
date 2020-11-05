@@ -34,6 +34,20 @@ def create_tables(c):
                         avatar VARCHAR
                         );''')
 
+    cursor.execute('''CREATE TABLE sections(
+                        user_id SERIAL,
+                        sec_id SERIAL PRIMARY KEY,
+                        sec_title VARCHAR,
+                        sec_image VARCHAR);''')
+
+    cursor.execute('''CREATE TABLE sub_sections(
+                        user_id SERIAL,
+                        sec_id SERIAL,
+                        sub_sec_id SERIAL PRIMARY KEY,
+                        sub_sec_title VARCHAR,
+                        sub_sec_image VARCHAR,
+                        upload_date DATE);''')
+
 
     cursor.close()
     conn.close()

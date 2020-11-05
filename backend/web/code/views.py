@@ -146,7 +146,6 @@ async def get_sec_data(request):
                     sec_data[key][sub_key] = ''
 
             
-    print(data)
     response = json.dumps(data)
     return web.json_response(response)
 
@@ -203,3 +202,12 @@ async def get_av_data(request):
 
     except Exception as e:
         return web.json_response('Image not found')
+
+async def get_all_posts(request):
+    result = request.app['db'].get_all_posts()
+
+    return web.json_response(json.dumps(result))
+
+
+
+
