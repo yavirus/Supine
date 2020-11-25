@@ -9,6 +9,19 @@ services:
     networks:
       - supine
 
+  nginx:
+    build:
+      context: ./app
+      dockerfile: Dockerfile-nginx
+    image: supine-nginx:0.0.1
+    volumes:
+      - ./app/code:/www/data
+    networks:
+      - supine
+    ports:
+      - "8888:8888"
+    
+
 networks:
   supine:
     external:

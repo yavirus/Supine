@@ -1,4 +1,4 @@
-# code_
+# code
 
 ## Project setup
 ```

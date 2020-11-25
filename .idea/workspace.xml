@@ -11,37 +11,236 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="810e0a30-9295-4e4d-9084-21fadb0be6f7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/dg/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/dg/code/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/dg/code/mingrations.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/dg/code/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/dg/code/tools.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/dg/entrypoint.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/dg/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/app/Dockerfile-nginx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/app/code/src/assets/formulate.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/.eslintignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/.eslintrc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/babel.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/build/locales.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/build/rollup.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/dist/ar.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/dist/cs.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/dist/da.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/dist/de.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/dist/en.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/dist/es.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/dist/fr.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/dist/he.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/dist/it.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/dist/ja.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/dist/ko.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/dist/locales.esm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/dist/locales.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/dist/locales.umd.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/dist/lt.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/dist/nb.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/dist/nl.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/dist/pl.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/dist/pt.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/dist/ru.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/dist/sr.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/dist/sv.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/dist/th.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/dist/zh.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/src/libs/formats.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/src/locales.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/src/locales/ar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/src/locales/cs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/src/locales/da.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/src/locales/de.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/src/locales/en.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/src/locales/es.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/src/locales/fr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/src/locales/he.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/src/locales/it.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/src/locales/ja.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/src/locales/ko.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/src/locales/lt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/src/locales/nb.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/src/locales/nl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/src/locales/pl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/src/locales/pt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/src/locales/ru.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/src/locales/sr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/src/locales/sv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/src/locales/th.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/src/locales/zh.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/test/jest.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/test/unit/ar.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/test/unit/cs.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/test/unit/da.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/test/unit/de.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/test/unit/en.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/test/unit/es.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/test/unit/fr.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/test/unit/he.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/test/unit/it.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/test/unit/ja.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/test/unit/ko.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/test/unit/lt.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/test/unit/nb.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/test/unit/nl.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/test/unit/pl.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/test/unit/pt.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/test/unit/ru.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/test/unit/sr.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/test/unit/sv.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/test/unit/th.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate-i18n/test/unit/zh.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/.eslintignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/.eslintrc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/.github/ISSUE_TEMPLATE/bug_report.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/.github/ISSUE_TEMPLATE/config.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/.github/ISSUE_TEMPLATE/feature_request.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/babel.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/build/rollup.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/build/rollup.iife.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/dist/formulate.esm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/dist/formulate.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/dist/formulate.umd.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/dist/snow.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/dist/snow.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/examples/FormulateSpecimens.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/examples/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/examples/specimens/SpecimenBox.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/examples/specimens/SpecimenButton.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/examples/specimens/SpecimenFile.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/examples/specimens/SpecimenGroup.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/examples/specimens/SpecimenSelect.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/examples/specimens/SpecimenSlider.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/examples/specimens/SpecimenText.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/examples/specimens/SpecimenTextarea.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/src/FileUpload.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/src/FormSubmission.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/src/Formulate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/src/FormulateErrors.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/src/FormulateFiles.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/src/FormulateForm.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/src/FormulateGrouping.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/src/FormulateInput.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/src/FormulateInputMixin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/src/FormulateRepeatableProvider.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/src/FormulateSchema.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/src/FormulateSlot.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/src/inputs/FormulateInputBox.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/src/inputs/FormulateInputButton.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/src/inputs/FormulateInputFile.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/src/inputs/FormulateInputGroup.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/src/inputs/FormulateInputSelect.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/src/inputs/FormulateInputSlider.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/src/inputs/FormulateInputText.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/src/inputs/FormulateInputTextArea.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/src/libs/classes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/src/libs/context.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/src/libs/faux-uploader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/src/libs/handler.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/src/libs/library.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/src/libs/mimes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/src/libs/registry.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/src/libs/rules.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/src/libs/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/src/locales/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/src/slots/FormulateAddMore.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/src/slots/FormulateHelp.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/src/slots/FormulateLabel.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/src/slots/FormulateRepeatable.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/src/slots/FormulateRepeatableRemove.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/test/jest.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/test/unit/Formulate.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/test/unit/FormulateForm.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/test/unit/FormulateInput.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/test/unit/FormulateInputBox.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/test/unit/FormulateInputButton.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/test/unit/FormulateInputFile.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/test/unit/FormulateInputGroup.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/test/unit/FormulateInputSelect.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/test/unit/FormulateInputSlider.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/test/unit/FormulateInputText.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/test/unit/FormulateSchema.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/test/unit/rules.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/test/unit/utils.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/themes/boilerplate/boilerplate.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/themes/snow/_inputs.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/themes/snow/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/@braid/vue-formulate/themes/snow/snow.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/is-plain-object/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/is-plain-object/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/is-plain-object/index.cjs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/is-plain-object/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/is-plain-object/index.es.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/is-plain-object/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/is-url/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/is-url/History.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/is-url/LICENSE-MIT" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/is-url/Readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/is-url/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/is-url/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/is-url/test/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/nanoid/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/nanoid/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/nanoid/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/nanoid/async/format.browser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/nanoid/async/format.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/nanoid/async/generate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/nanoid/async/index.browser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/nanoid/async/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/nanoid/async/random.browser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/nanoid/async/random.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/nanoid/async/random.rn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/nanoid/format.browser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/nanoid/format.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/nanoid/generate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/nanoid/index.browser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/nanoid/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/nanoid/non-secure/generate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/nanoid/non-secure/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/nanoid/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/nanoid/random.browser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/nanoid/random.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/nanoid/url.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/dj/code/tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/dj/code/tools.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/dj/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/dj/code/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/dj/code/mingrations.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/dj/code/settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/dj/code/tools.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/dj/entrypoint.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/dj/requirements.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/web/code/pdb/worker.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/code/pdb/worker.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/web/code/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/code/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/web/code/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/code/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/Dockerfile" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/app/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/code/create_user.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/code/css/create_user.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/code/css/feed.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/code/css/main.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/code/css/prof_settings.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/code/css/profile_page.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/code/css/test-pic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/code/css/test-pic2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/code/css/test-pic3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/code/css/test-pic4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/code/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/code/feed.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/code/images/default.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/code/images/settings.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/code/js/create_user.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/code/js/feed.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/code/js/profile_page.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/code/js/settings.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/code/profile_page.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/code/settings.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/code/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/code/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/code/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/code/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/code/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/code/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/code/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/code/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/code/src/components/SignUpForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/code/src/components/SignUpForm.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/code/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/code/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/code/src/router/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/code/src/store/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/code/src/views/About.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/code/src/views/Home.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/code/src/views/SignUp.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/code/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/code/vue.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/app/conf/conf_d/supine.conf" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/conf/conf_d/supine.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/conf/nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/conf/nginx.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -322,6 +521,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Added image sections, but frontend for them is still unfinished 2" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="0" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606299610504">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="0" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1606299610504" />
     <state x="245" y="354" width="578" height="396" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599488137034">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -334,9 +537,9 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="125" y="288" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1599451298313" />
-    <state x="403" y="385" width="540" height="344" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1604559184626">
+    <state x="403" y="385" width="540" height="344" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1605071845948">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="403" y="385" width="540" height="344" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1604559184626" />
+    <state x="403" y="385" width="540" height="344" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1605071845948" />
   </component>
 </project>

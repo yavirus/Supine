@@ -11,18 +11,16 @@ services:
       - default
     volumes:
       - ./web/code:/app
-    ports:
-      - "8080:80"
 
-  db:
-    build: ./db
-    image: supine-dj:0.1.0
+  dg:
+    build: ./dg
+    image: supine-dg:0.1.0
     depends_on:
       - postgres
     networks:
       - default
     volumes:
-      - ./dj/code:/app
+      - ./dg/code:/app
 
   postgres:
     image: postgres

@@ -24,12 +24,12 @@ class PostgresWorker:
         return self.disconnect()
 
     def save_user(self, contents):
-        con_values = []
-        for dict in contents:
-            con_values.append(dict['value'])
-        username = con_values[0]
-        email = con_values[1]
-        password = con_values[3]
+        #con_values = []
+        #for dict in contents:
+            #con_values.append(dict['value'])
+        username = contents['username']
+        email = contents['email']
+        password = contents['password']
 
         request = '''INSERT INTO users (username, password, email)
                     VALUES(%s, %s, %s)
