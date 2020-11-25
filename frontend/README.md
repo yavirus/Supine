@@ -1,1 +1,1 @@
-# Supine
+# Frontend vue spa with nginx web server
